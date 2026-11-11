@@ -1,0 +1,134 @@
+/* Insaaf light theme. Complete CSS colors, not HSL channel tuples.
+   Import after shadcn base tokens; remove stock dark-mode overrides.
+   Tailwind v4 bridge lives in design.md. Do not wrap var() in hsl(). */
+:root {
+  color-scheme: light;
+  --background: #F6F3EB;
+  --foreground: #252C28;
+  --card: #FCFAF4;
+  --muted: #EAE7DD;
+  --muted-foreground: #555E56;
+  --border: #727A6F;
+  --rule: #D4D6CC;
+  --primary: #254D46;
+  --primary-hover: #193D37;
+  --primary-active: #12332E;
+  --primary-foreground: #FCFAF4;
+  --accent: #8A3F27;
+  --accent-hover: #6F301E;
+  --accent-foreground: #FCFAF4;
+  --evidence-verified: #235A48;
+  --evidence-verified-bg: #E4EEE7;
+  --partial: #745016;
+  --partial-bg: #F4EACF;
+  --error: #922F35;
+  --error-bg: #F8E7E5;
+  --flag-integrity: #80501B;
+  --flag-integrity-bg: #F2E4CE;
+  --state-needs-review: #6C501D;
+  --state-needs-review-bg: #F5EDD9;
+  --state-approved: #235A48;
+  --state-approved-bg: #E4EEE7;
+  --state-released: #274F5D;
+  --state-released-bg: #E2EDF0;
+  --info: #34545B;
+  --info-bg: #E7EFF0;
+  --band-full: #254D46;
+  --band-mostly: #54756D;
+  --band-partial: #8CA59A;
+  --band-minimal: #BACAC0;
+  --band-none: #E5EBE3;
+  --chart-1: #254D46;
+  --chart-2: #8A3F27;
+  --chart-3: #775C1C;
+  --chart-4: #395F70;
+  --chart-5: #62673B;
+  --chart-6: #49423B;
+
+  --popover: var(--card); --popover-foreground: var(--foreground);
+  --card-foreground: var(--foreground);
+  --secondary: var(--muted); --secondary-foreground: var(--foreground);
+  --destructive: var(--error); --destructive-foreground: var(--card);
+  --input: var(--border); --ring: var(--accent);
+  --sidebar: var(--background); --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary); --sidebar-primary-foreground: var(--card);
+  --sidebar-accent: var(--muted); --sidebar-accent-foreground: var(--foreground);
+  --sidebar-border: var(--rule); --sidebar-ring: var(--ring);
+  --evidence-fuzzy: var(--partial); --evidence-fuzzy-bg: var(--partial-bg);
+  --evidence-error: var(--error); --evidence-error-bg: var(--error-bg);
+  --evidence-hidden: var(--flag-integrity); --evidence-hidden-bg: var(--flag-integrity-bg);
+  --evidence-quarantined: var(--flag-integrity); --evidence-quarantined-bg: var(--flag-integrity-bg);
+  --band-full-foreground: var(--card); --band-mostly-foreground: var(--card);
+  --band-partial-foreground: var(--foreground); --band-minimal-foreground: var(--foreground);
+  --band-none-foreground: var(--foreground);
+  --radius: 0.375rem; --radius-input: 0.25rem; --radius-card: 0.375rem;
+  --radius-chip: 999px; --radius-dialog: 0.625rem;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 20px; --space-6: 24px; --space-8: 32px; --space-10: 40px; --space-12: 48px;
+  --shadow-paper: 0 1px 3px rgb(37 44 40 / 0.10);
+  --shadow-overlay: 0 4px 10px rgb(37 44 40 / 0.16);
+  --motion-routine: 120ms; --motion-panel: 240ms;
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+  --font-heading: 'Source Serif 4', Georgia, serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-urdu: 'Noto Nastaliq Urdu', serif;
+}
+/* Global basics and shadcn override hooks. Bind these classes to existing components. */
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background); color: var(--foreground);
+  font-family: var(--font-ui, var(--font-body)); font-size: 16px; line-height: 1.5; }
+h1,h2,h3 { font-family: var(--font-display, var(--font-heading)); font-weight: 600; }
+a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--accent-hover); }
+:where(button,a,input,select,textarea,[tabindex]):focus-visible {
+  outline: 3px solid var(--ring); outline-offset: 3px;
+}
+.insaaf-button { min-height:44px; border:1px solid transparent; border-radius:var(--radius-input);
+  padding: 10px 16px; font:600 16px/1.375 var(--font-ui, var(--font-body)); cursor:pointer;
+  transition:transform var(--motion-routine) var(--ease-out); }
+.insaaf-button[data-variant='primary'] { background:var(--primary);color:var(--primary-foreground); }
+.insaaf-button[data-variant='primary']:hover { background:var(--primary-hover); }
+.insaaf-button[data-variant='primary']:active { background:var(--primary-active); }
+.insaaf-button[data-variant='secondary'] { background:var(--card); color:var(--foreground);border-color:var(--border); }
+.insaaf-button[data-variant='ghost'] { background:transparent; color:var(--accent);text-decoration:underline;text-underline-offset:3px; }
+.insaaf-button[data-variant='secondary']:hover,.insaaf-button[data-variant='ghost']:hover { background:var(--muted); }
+.insaaf-button[data-variant='destructive'] { background:var(--error);color:var(--card); }
+.insaaf-button[data-variant='destructive']:hover { outline:1px solid var(--error);outline-offset:2px; }
+.insaaf-button:active { transform:translateY(1px); }
+.insaaf-button[data-variant]:disabled,.insaaf-button[data-variant][aria-disabled='true'] { background:var(--muted);color:var(--muted-foreground);
+  border-color:var(--border);cursor:not-allowed;transform:none;text-decoration:none;opacity:1; }
+.insaaf-button[aria-busy='true'] { cursor:progress;transform:none; }
+.insaaf-input { min-height:44px; border:1px solid var(--input); border-radius:var(--radius-input);
+ background:var(--card);color:var(--foreground);padding:10px 12px;font:inherit;width:100%; }
+.insaaf-input[aria-invalid='true'] { border:2px solid var(--error); }
+.insaaf-input::placeholder { color:var(--muted-foreground);opacity:1; }
+.insaaf-chip { display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:var(--radius-chip);
+ font-size:16px;font-weight:600;line-height:1.5;border:1px solid currentColor; }
+.insaaf-quote { color:var(--foreground);background:var(--evidence-verified-bg);
+ text-decoration:underline;text-decoration-color:var(--evidence-verified);text-decoration-thickness:2px;
+ text-underline-offset:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:1px 2px; }
+.insaaf-quote[data-kind='fuzzy'] { background:var(--partial-bg);text-decoration-style:dotted;text-decoration-color:var(--partial); }
+.insaaf-quote[data-kind='error'] { background:var(--error-bg);text-decoration-style:wavy;text-decoration-color:var(--error); }
+.insaaf-quote[data-kind='hidden'],.insaaf-quote[data-kind='quarantined'] {
+ background:var(--flag-integrity-bg);text-decoration:line-through;text-decoration-color:var(--flag-integrity); }
+.insaaf-numeric { font-variant-numeric:tabular-nums lining-nums; }
+.insaaf-id { font-family:var(--font-data,var(--font-mono)); }
+.insaaf-feedback { max-width:65ch;overflow-wrap:anywhere; }
+.insaaf-skeleton { background:var(--muted);border-radius:var(--radius-input);animation:none; }
+:lang(ur) { font-family:var(--font-urdu-next,var(--font-urdu));font-size:20px;line-height:2.4;
+ letter-spacing:normal;text-align:start; }
+[dir='rtl'] { text-align:start; }
+@media (prefers-reduced-motion:reduce) {
+ *,*::before,*::after { animation:none!important;transition:none!important;scroll-behavior:auto!important; }
+}
+
+.insaaf-input:hover { background:var(--muted); }
+.insaaf-input:disabled { background:var(--muted); color:var(--muted-foreground); opacity:1; cursor:not-allowed; }
+.insaaf-input:disabled::placeholder { color:var(--muted-foreground); }
+.insaaf-button[data-variant]:disabled:hover,.insaaf-button[data-variant][aria-disabled='true']:hover {
+ background:var(--muted); color:var(--muted-foreground); transform:none; outline:none;
+}
+.insaaf-button[data-variant][aria-disabled='true']:focus-visible {
+ outline:3px solid var(--ring); outline-offset:3px;
+}

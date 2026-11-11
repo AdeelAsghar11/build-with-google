@@ -39,16 +39,16 @@
 | M1.1 | LLM client | P0 | ✅ |
 | M1.2 | Prompts wired | P0 | ✅ |
 | M1.3 | Rubric compiler (`compileRubric`) | P0 | ✅ |
-| M2.1 | Parse txt/docx/pdf | P0 | ⬜ |
-| M2.2 | Sanitize (hidden text) | P0 | ⬜ |
-| M2.3 | Redact PII + pseudonyms | P0 | ⬜ |
-| M2.4 | Heuristic scan | P0 | ⬜ |
-| M2.5 | `ingestFiles` export + tests | P0 | ⬜ |
+| M2.1 | Parse txt/docx/pdf | P0 | ✅ |
+| M2.2 | Sanitize (hidden text) | P0 | ✅ |
+| M2.3 | Redact PII + pseudonyms | P0 | ✅ |
+| M2.4 | Heuristic scan | P0 | ✅ |
+| M2.5 | `ingestFiles` export + tests | P0 | ✅ |
 | M3.1 | Guard (Gemma) + quarantine | P0 | ⬜ |
 | M3.2 | Grader A/B per criterion | P0 | ⬜ |
 | M3.3 | Evidence verifier | P0 | ⬜ |
 | M3.4 | Consensus + arbiter | P0 | ⬜ |
-| M3.5 | Scorer `score()` (pure, exported) | P0 | ⬜ |
+| M3.5 | Scorer `score()` (pure, exported) | P0 | ✅ |
 | M3.6 | Router | P0 | ⬜ |
 | M3.7 | Orchestrator + grade route | P0 | ⬜ |
 | M4.1 | Feedback writer | P0 | ⬜ |
@@ -128,3 +128,4 @@ Format: `HH:MM · Adeel|Ubaid · did what · next`
 - 12:33 · Adeel · M0.8 mock graded assessment complete (12 submissions, planted cases verified by vitest, contract-valid JSON, build & lint passing) · git push
 - 12:39 · Adeel · M0.3 Firestore repo & audit layer complete with typed methods & vitest coverage, build & lint passing · git push
 - 12:45 · Adeel · M1 complete (LLM client with nonce/schema/cache/audit, all 6 prompts wired & hashed, compileRubric pure + checks, 32 vitest passing, build & lint green) · git push
+- 12:49 · Adeel · M2 complete (parse txt/docx/pdf, sanitize zero-width/hidden, redact PII + pseudonyms, heuristics, ingestFiles, 37 vitest passing, build & lint green) · git push
