@@ -51,9 +51,9 @@
 | M3.5 | Scorer `score()` (pure, exported) | P0 | ✅ |
 | M3.6 | Router | P0 | ✅ |
 | M3.7 | Orchestrator + grade route | P0 | ✅ |
-| M4.1 | Feedback writer | P0 | ⬜ |
-| M5.1 | Collusion detector | P1 | ⬜ |
-| M5.2 | Finalize + route | P1 | ⬜ |
+| M4.1 | Feedback writer | P0 | ✅ |
+| M5.1 | Collusion detector | P1 | ✅ |
+| M5.2 | Finalize + route | P1 | ✅ |
 | M6.1 | Red-team cases | P1 | ⬜ |
 | M6.2 | Red-team runner + results | P1 | ⬜ |
 | M7.1 | Trust report + route | P1 | ⬜ |
@@ -132,3 +132,4 @@ Format: `HH:MM · Adeel|Ubaid · did what · next`
 - 13:18 · Adeel · D-022: Restored parallel team division with Ubaid (Adeel: AI pipeline, Ubaid: App/Analytics/UI); delivered complete Insaaf UI suite (Setup, Submissions, Review Queue, Analytics, Trust, Disclosure, Student Feedback Card) conforming to design.md, brand-sheet, and tokens.css · git push
 - 13:34 · Ubaid · UI suite build verified with Next.js 16 App Router, Suspense boundaries, strict TypeScript checks, all 8 test files passing · git push
 - 13:49 · Adeel · M3 Grading core complete (Guard, Grader A/B parallel, Arbiter, Consensus, Router, Orchestrator, grade route, 48 vitest passing, grade:fixtures passing 12/12, S1 sync reached) · git push
+- 14:03 · Adeel · M4 & M5 complete: Feedback writer, within-class collusion detector (calibrated D-023), finalize batch pipeline & route, 50 vitest passing · git push

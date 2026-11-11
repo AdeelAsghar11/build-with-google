@@ -166,6 +166,15 @@ Template:
 
 ---
 
+### D-023: Calibrated within-batch collusion thresholds on synthetic cohort
+- Date/time: 2026-11-11 14:02 PKT · Author: Adeel · Status: Accepted
+- Context: Architecture §9 specifies 5-gram shingles and cosine similarity, with threshold tuning required on benchmark fixtures. In the 12-submission cohort, S-09 and S-10 contain heavily paraphrased and reordered answers with identical technical examples (L2 Ridge formulation, medical biopsy inks).
+- Empirical measurement: S-09 vs S-10 shares 23 exact 5-grams (containment = 0.103) and has cosine similarity = 0.825. All other 65 pairs in the cohort have containment <= 0.015 and cosine < 0.70.
+- Decision: Set `containmentHighThreshold = 0.08` and `cosineMedThreshold = 0.80`. This cleanly isolates S-09 and S-10 as a 'high' collusion pair with zero false positives across the class.
+- Consequences: Submissions S-09 and S-10 are routed to `needs_review` with the `COLLUSION` reason.
+
+---
+
 ## Implementation log (one line each, newest at bottom)
 
 Format: `YYYY-MM-DD HH:MM · who · what · why`
@@ -174,3 +183,5 @@ Format: `YYYY-MM-DD HH:MM · who · what · why`
 - 2026-11-11 12:03 · Adeel · D-020: consolidated all development to Adeel; mandatory git push after each roadmap step · workflow alignment
 - 2026-11-11 12:45 · Adeel · D-021: visual design system adopted (examination paper, tokens.css, font scale, criterion evidence underline) · UI consistency
 - 2026-11-11 13:17 · Adeel · D-022: restored parallel team division (Adeel on AI Pipeline, Ubaid on App/UI) · speed up before freeze
+- 2026-11-11 14:02 · Adeel · D-023: calibrated within-cohort collusion thresholds (5-shingle containment >= 0.08) · M5.1 Accept criteria met
+
