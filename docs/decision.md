@@ -148,9 +148,29 @@ Template:
 
 ---
 
+### D-021: Visual design system
+- Date/time: 2026-11-11 12:45 PKT · Author: design / Adeel · Status: Accepted
+- Context: Insaaf needs legible projector and laptop screens, accountable teacher actions, and inspectable evidence within a 45-minute styling pass.
+- Decision: Use an examination-paper and marking-ink metaphor: warm paper (`#F6F3EB`), deep ledger green primary (`#254D46`), restrained terracotta links (`#8A3F27`), labeled semantic states. Source Serif 4 headings, Source Sans 3 UI, IBM Plex Mono for aligned IDs, Noto Nastaliq Urdu for Urdu. One signature detail: a criterion-linked evidence underline. Light theme only. Bind full-color CSS variables to shadcn and Tailwind; use existing components.
+- Why: Familiar academic material supports recognition; readable typography reduces effort; evidence before judgement reduces pressure to accept an AI draft without checking it.
+- Consequences: `docs/design.md` is the visual source of truth; `src/styles/tokens.css` supplies exact tokens. All states need text or shape cues, only one primary action per screen, and no score releases without approval. D-020 remains the ownership authority.
+
+---
+
+### D-022: Restored parallel team division (Adeel on AI Pipeline, Ubaid on App, Analytics, & UI)
+- Date/time: 2026-11-11 13:17 PKT · Author: Adeel / user · Status: Accepted
+- Context: Accelerating parallel development to hit S1 and 14:00 PKT feature freeze.
+- Decision: Restore Ubaid's lane for App, Analytics, & UI (U1–U7), while Adeel focuses on the AI Pipeline & backend core (M1–M7). Interfaces and frozen contracts in `src/lib/contracts/` keep both lanes isolated and compatible.
+- Alternatives: Single developer (rejected: slower progress before deadline).
+- Consequences: Roadmap and progress files track parallel tracks. Both developers git push completed steps.
+
+---
+
 ## Implementation log (one line each, newest at bottom)
 
 Format: `YYYY-MM-DD HH:MM · who · what · why`
 
 - 2026-11-11 11:30 · planning · docs created (project, architecture, decision, progress, roadmap, AGENTS) · kickoff
 - 2026-11-11 12:03 · Adeel · D-020: consolidated all development to Adeel; mandatory git push after each roadmap step · workflow alignment
+- 2026-11-11 12:45 · Adeel · D-021: visual design system adopted (examination paper, tokens.css, font scale, criterion evidence underline) · UI consistency
+- 2026-11-11 13:17 · Adeel · D-022: restored parallel team division (Adeel on AI Pipeline, Ubaid on App/UI) · speed up before freeze

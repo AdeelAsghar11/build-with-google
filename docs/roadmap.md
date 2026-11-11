@@ -5,10 +5,10 @@
 
 ## Team & scope
 
-All development is consolidated under **Adeel** (per D-020), who owns the full stack:
-- AI pipeline (`src/lib/llm`, `src/lib/ingest`, `src/lib/pipeline`, `src/lib/batch/`, `prompts/`, `scripts/`, `tests/`, `fixtures/`)
-- App, analytics, UI (`src/app/**`, `src/components/**`, `src/lib/db`, `src/lib/auth.ts`, `firestore.rules`)
-- Shared contracts (`src/lib/contracts/`)
+Parallel two-developer structure (per D-022 superseding D-020):
+- **Adeel**: AI Pipeline & Backend (`src/lib/llm`, `src/lib/ingest`, `src/lib/pipeline`, `src/lib/batch/`, `prompts/`, `scripts/`, `tests/pipeline*`, `fixtures/`)
+- **Ubaid**: App, Analytics, & UI (`src/app/**`, `src/components/**`, `src/lib/db`, `src/lib/auth.ts`, `src/styles/tokens.css`, `firestore.rules`)
+- Shared contracts: `src/lib/contracts/` (frozen, changes require decision log entry)
 
 Priority tags: **P0** = demo dies without it · **P1** = our differentiator, build right after P0 · **P2** = stretch, only if all P0+P1 are green.
 

@@ -1,6 +1,8 @@
 # AGENTS.md: read this before touching code
 
-You are a coding agent on **Insaaf**, a teacher-assisted, bias-audited AI grading system (Build with Google Hackathon, 2026-11-11). **Adeel** is the sole developer responsible for the full stack (AI pipeline, app, analytics, and UI).
+You are a coding agent on **Insaaf**, a teacher-assisted, bias-audited AI grading system (Build with Google Hackathon, 2026-11-11). **Adeel** and **Ubaid** develop the project in parallel:
+- **Adeel**: AI pipeline & backend core (`src/lib/llm`, `src/lib/ingest`, `src/lib/pipeline`, `src/lib/batch/`, `prompts/`, `scripts/`, `tests/`, `fixtures/`)
+- **Ubaid**: App, analytics, and UI (`src/app/**`, `src/components/**`, `src/lib/db/`, `src/lib/auth.ts`, `src/styles/tokens.css`, `firestore.rules`)
 
 ## Read order (every session)
 1. `docs/progress.md`: what's done, what's next, blockers
@@ -8,7 +10,7 @@ You are a coding agent on **Insaaf**, a teacher-assisted, bias-audited AI gradin
 3. `docs/architecture.md`: the section for that task (contracts in §8)
 4. `docs/decision.md`: don't contradict accepted decisions
 5. `docs/project.md`: only if you need product context
-6. `docs/design.md`: if it exists, follow it for all UI. If not, use shadcn defaults and spend no time on styling.
+6. `docs/design.md`, `docs/brand-sheet.md`, `docs/brand-sheet.html`, `src/styles/tokens.css`: **Mandatory UI reference.** Whenever building interface pages, components, or any UI element, you MUST strictly follow these design documents. Use the examination-paper and marking-ink metaphor, semantic tokens (`tokens.css`), typography (Source Serif 4, Source Sans 3, IBM Plex Mono, Noto Nastaliq Urdu), criterion-linked evidence underlines, single primary button rule, anti-AI-slop rules, and WCAG 2.2 AA accessibility guidelines.
 
 ## Clock
 Feature freeze **14:00 PKT**. Presentations may start 14:30. Prefer a working narrow feature over a broken broad one. If a task will overrun, ship the P0 part, mark the rest ✂️ in progress.md, and log it.
@@ -27,8 +29,8 @@ Feature freeze **14:00 PKT**. Presentations may start 14:30. Prefer a working na
 11. **Never claim** "unbiased", "plagiarism detected", "AI-written", or accuracy numbers that weren't measured. UI wording: "high similarity, needs teacher judgement".
 12. Demo data is synthetic. Never add real student work or real student names.
 
-## Development scope
-Adeel owns the entire codebase: `src/lib/llm`, `src/lib/ingest`, `src/lib/pipeline`, `src/lib/batch/`, `src/lib/db/`, `src/app/**`, `src/components/**`, `prompts/`, `scripts/`, `tests/`, and fixtures.
+- **Adeel**: `src/lib/llm`, `src/lib/ingest`, `src/lib/pipeline`, `src/lib/batch/`, `prompts/`, `scripts/`, `tests/`
+- **Ubaid**: `src/lib/db/`, `src/app/**`, `src/components/**`, `src/styles/tokens.css`, `firestore.rules`
 
 ## Coding conventions
 - TypeScript strict; no `any` in `lib/`. zod-parse every API body and every model output.

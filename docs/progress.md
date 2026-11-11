@@ -44,13 +44,13 @@
 | M2.3 | Redact PII + pseudonyms | P0 | ✅ |
 | M2.4 | Heuristic scan | P0 | ✅ |
 | M2.5 | `ingestFiles` export + tests | P0 | ✅ |
-| M3.1 | Guard (Gemma) + quarantine | P0 | ⬜ |
-| M3.2 | Grader A/B per criterion | P0 | ⬜ |
-| M3.3 | Evidence verifier | P0 | ⬜ |
-| M3.4 | Consensus + arbiter | P0 | ⬜ |
+| M3.1 | Guard (Gemma) + quarantine | P0 | 🟡 |
+| M3.2 | Grader A/B per criterion | P0 | 🟡 |
+| M3.3 | Evidence verifier | P0 | 🟡 |
+| M3.4 | Consensus + arbiter | P0 | 🟡 |
 | M3.5 | Scorer `score()` (pure, exported) | P0 | ✅ |
-| M3.6 | Router | P0 | ⬜ |
-| M3.7 | Orchestrator + grade route | P0 | ⬜ |
+| M3.6 | Router | P0 | 🟡 |
+| M3.7 | Orchestrator + grade route | P0 | 🟡 |
 | M4.1 | Feedback writer | P0 | ⬜ |
 | M5.1 | Collusion detector | P1 | ⬜ |
 | M5.2 | Finalize + route | P1 | ⬜ |
@@ -129,3 +129,4 @@ Format: `HH:MM · Adeel|Ubaid · did what · next`
 - 12:39 · Adeel · M0.3 Firestore repo & audit layer complete with typed methods & vitest coverage, build & lint passing · git push
 - 12:45 · Adeel · M1 complete (LLM client with nonce/schema/cache/audit, all 6 prompts wired & hashed, compileRubric pure + checks, 32 vitest passing, build & lint green) · git push
 - 12:49 · Adeel · M2 complete (parse txt/docx/pdf, sanitize zero-width/hidden, redact PII + pseudonyms, heuristics, ingestFiles, 37 vitest passing, build & lint green) · git push
+- 13:18 · Adeel · D-022: Restored parallel team division with Ubaid (Adeel: AI pipeline, Ubaid: App/Analytics/UI); delivered complete Insaaf UI suite (Setup, Submissions, Review Queue, Analytics, Trust, Disclosure, Student Feedback Card) conforming to design.md, brand-sheet, and tokens.css · git push
