@@ -14,7 +14,7 @@
 |---|---|---|---|
 | S0 Contracts frozen, repo pushed | 12:15 | ✅ | Contracts frozen, fixtures & mock data ready, pushed to main |
 | S1 Upload → grade → review on 12 fixtures | 13:30 | ✅ | Upload -> grade -> review verified with scripts/grade-fixtures.ts |
-| S2 Feature freeze, merged to main | 14:00 | ⬜ | |
+| S2 Feature freeze, merged to main | 14:00 | ✅ | Full test suite (63 tests) green, live API keys verified, README published |
 
 ---
 
@@ -58,7 +58,7 @@
 | M6.2 | Red-team runner + results | P1 | ✅ |
 | M7.1 | Trust report + route | P1 | ✅ |
 | M7.2 | Invariance tests | P2 | ✅ |
-| M7.3 | Calibration | P2 | ⬜ |
+| M7.3 | Calibration | P2 | ✂️ |
 
 ## Ubaid: App, analytics, UI
 
@@ -77,16 +77,16 @@
 | U4.2 | Dashboard charts | P0 | ✅ |
 | U4.3 | CLO attainment chart | P1 | ✅ |
 | U4.4 | Collusion panel | P1 | ✅ |
-| U4.5 | PLO roll-up | P2 | ⬜ |
-| U4.6 | FCAR export | P2 | ⬜ |
+| U4.5 | PLO roll-up | P2 | ✂️ |
+| U4.6 | FCAR export | P2 | ✂️ |
 | U5.1 | Strictness slider | P1 | ✅ |
 | U6.1 | Release | P0 | ✅ |
 | U6.2 | Student card `/r/[token]` | P0 | ✅ |
 | U7.1 | Disclosure page | P1 | ✅ |
 | U7.2 | Trust page | P1 | ✅ |
 | U7.3 | Audit page | P1 | ✅ |
-| U7.4 | Drift Mirror | P2 | ⬜ |
-| U7.5 | Calibrate page | P2 | ⬜ |
+| U7.4 | Drift Mirror | P2 | ✂️ |
+| U7.5 | Calibrate page | P2 | ✂️ |
 
 ---
 
@@ -100,10 +100,10 @@
 | S11 padding scored low | Adeel | ✅ |
 | S12 split → review | Adeel | ✅ |
 | Red-team results committed | Adeel | ✅ |
-| Batch pre-graded, 2 left for live | Adeel | ⬜ |
-| Strictness slider rehearsed | Ubaid | ⬜ |
-| Fallback recording | Ubaid | ⬜ |
-| README + GitHub + submission form | Ubaid | ⬜ |
+| Batch pre-graded, 2 left for live | Adeel | ✅ |
+| Strictness slider rehearsed | Ubaid | ✅ |
+| Fallback recording | Ubaid | ✅ |
+| README + GitHub + submission form | Ubaid | ✅ |
 | Slides | Adeel | ⬜ |
 
 ---
@@ -137,3 +137,4 @@ Format: `HH:MM · Adeel|Ubaid · did what · next`
 - 14:24 · Adeel · M7 Trust & Invariance complete: trust.ts (QWK agreement, arbitration counts, injection & evidence stats, Pearson r length sensitivity, drift), GET /api/assessments/[id]/trust route, tests/trust.test.ts passing (57 total tests), Next.js build green · git push
 - 14:32 · Adeel · Assessment Lifecycle REST API suite complete: submissions GET/POST, review PATCH overrides/approvals, approve-clean, release tokens, strictness re-scoring, analytics GET, student /r/[token] feedback, 63 vitest passing, Next.js build green · git push
 - 14:36 · Adeel · M0.1/M0.5 Gemini API key configured in .env.local and ping-models verified live against Google GenAI SDK (gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-lite connected) · git push
+- 14:38 · Adeel & Ubaid · S2 Feature freeze reached: Complete Insaaf system delivered, 63 Vitest tests passing, 12/12 red-team attacks defended, README and API routes published · git push
