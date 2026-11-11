@@ -64,27 +64,27 @@
 
 | # | Task | Pri | Status |
 |---|---|---|---|
-| U1.1 | `repo.ts` + `appendAudit` | P0 | ⬜ |
-| U1.2 | `requireTeacher` + Google sign-in | P0 | ⬜ |
-| U1.3 | Course page (CLO/PLO) | P0 | ⬜ |
-| U1.4 | Assessment setup + rubric compile/approve | P0 | ⬜ |
-| U2.1 | Upload + roster | P0 | ⬜ |
-| U2.2 | Grade run + progress | P0 | ⬜ |
-| U3.1 | Review queue | P0 | ⬜ |
-| U3.2 | Review detail + edit/approve | P0 | ⬜ |
-| U3.3 | Approve clean + order + nudge | P0 | ⬜ |
-| U4.1 | Analytics + CLO math | P0 | ⬜ |
-| U4.2 | Dashboard charts | P0 | ⬜ |
-| U4.3 | CLO attainment chart | P1 | ⬜ |
-| U4.4 | Collusion panel | P1 | ⬜ |
+| U1.1 | `repo.ts` + `appendAudit` | P0 | ✅ |
+| U1.2 | `requireTeacher` + Google sign-in | P0 | ✅ |
+| U1.3 | Course page (CLO/PLO) | P0 | ✅ |
+| U1.4 | Assessment setup + rubric compile/approve | P0 | ✅ |
+| U2.1 | Upload + roster | P0 | ✅ |
+| U2.2 | Grade run + progress | P0 | ✅ |
+| U3.1 | Review queue | P0 | ✅ |
+| U3.2 | Review detail + edit/approve | P0 | ✅ |
+| U3.3 | Approve clean + order + nudge | P0 | ✅ |
+| U4.1 | Analytics + CLO math | P0 | ✅ |
+| U4.2 | Dashboard charts | P0 | ✅ |
+| U4.3 | CLO attainment chart | P1 | ✅ |
+| U4.4 | Collusion panel | P1 | ✅ |
 | U4.5 | PLO roll-up | P2 | ⬜ |
 | U4.6 | FCAR export | P2 | ⬜ |
-| U5.1 | Strictness slider | P1 | ⬜ |
-| U6.1 | Release | P0 | ⬜ |
-| U6.2 | Student card `/r/[token]` | P0 | ⬜ |
-| U7.1 | Disclosure page | P1 | ⬜ |
-| U7.2 | Trust page | P1 | ⬜ |
-| U7.3 | Audit page | P1 | ⬜ |
+| U5.1 | Strictness slider | P1 | ✅ |
+| U6.1 | Release | P0 | ✅ |
+| U6.2 | Student card `/r/[token]` | P0 | ✅ |
+| U7.1 | Disclosure page | P1 | ✅ |
+| U7.2 | Trust page | P1 | ✅ |
+| U7.3 | Audit page | P1 | ✅ |
 | U7.4 | Drift Mirror | P2 | ⬜ |
 | U7.5 | Calibrate page | P2 | ⬜ |
 
@@ -130,3 +130,4 @@ Format: `HH:MM · Adeel|Ubaid · did what · next`
 - 12:45 · Adeel · M1 complete (LLM client with nonce/schema/cache/audit, all 6 prompts wired & hashed, compileRubric pure + checks, 32 vitest passing, build & lint green) · git push
 - 12:49 · Adeel · M2 complete (parse txt/docx/pdf, sanitize zero-width/hidden, redact PII + pseudonyms, heuristics, ingestFiles, 37 vitest passing, build & lint green) · git push
 - 13:18 · Adeel · D-022: Restored parallel team division with Ubaid (Adeel: AI pipeline, Ubaid: App/Analytics/UI); delivered complete Insaaf UI suite (Setup, Submissions, Review Queue, Analytics, Trust, Disclosure, Student Feedback Card) conforming to design.md, brand-sheet, and tokens.css · git push
+- 13:34 · Ubaid · UI suite build verified with Next.js 16 App Router, Suspense boundaries, strict TypeScript checks, all 8 test files passing · git push
