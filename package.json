@@ -9,7 +9,7 @@
     "lint": "eslint",
     "test": "vitest run",
     "test:watch": "vitest",
-    "redteam": "tsx scripts/redteam.ts",
+    "redteam": "tsx --conditions=react-server scripts/redteam.ts",
     "grade:fixtures": "tsx --conditions=react-server scripts/grade-fixtures.ts"
   },
   "dependencies": {
