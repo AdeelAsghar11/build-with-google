@@ -184,4 +184,5 @@ Format: `YYYY-MM-DD HH:MM · who · what · why`
 - 2026-11-11 12:45 · Adeel · D-021: visual design system adopted (examination paper, tokens.css, font scale, criterion evidence underline) · UI consistency
 - 2026-11-11 13:17 · Adeel · D-022: restored parallel team division (Adeel on AI Pipeline, Ubaid on App/UI) · speed up before freeze
 - 2026-11-11 14:02 · Adeel · D-023: calibrated within-cohort collusion thresholds (5-shingle containment >= 0.08) · M5.1 Accept criteria met
+- 2026-11-11 15:30 · Ubaid · configured @tailwindcss/postcss and postcss.config.mjs for Webpack dev server styling · fix unstyled UI on localhost:3000
 

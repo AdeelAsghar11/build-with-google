@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@source "../app";
+@source "../components";
 @import "../styles/tokens.css";
 
 /* Moderator Typography and Base Defaults */
