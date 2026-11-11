@@ -24,7 +24,7 @@
 |---|---|---|---|
 | M0.1 | GCP credits claimed, billing + Gemini key | Adeel | ⬜ |
 | M0.2 | Next.js scaffold + deps + GitHub + skeleton | Adeel | ✅ |
-| M0.3 | Firebase Auth + Firestore + deny-all rules | Adeel | ⬜ |
+| M0.3 | Firebase Auth + Firestore + deny-all rules | Adeel | ✅ |
 | M0.4 | `.env.example`, gitignore | Adeel | ✅ |
 | M0.5 | Model IDs verified + logged | Adeel | ⬜ |
 | M0.6 | Contracts (zod) frozen | Adeel | ✅ |
@@ -126,3 +126,4 @@ Format: `HH:MM · Adeel|Ubaid · did what · next`
 - 12:22 · Adeel · M0.6 contracts frozen with AnalyticsReport & TrustReport schemas, tests passing · M0.7 fixtures
 - 12:28 · Adeel · M0.7 fixtures complete (course, assessment with approved rubric, roster, 12 scripts with planted cases, tests passing) · git push
 - 12:33 · Adeel · M0.8 mock graded assessment complete (12 submissions, planted cases verified by vitest, contract-valid JSON, build & lint passing) · git push
+- 12:39 · Adeel · M0.3 Firestore repo & audit layer complete with typed methods & vitest coverage, build & lint passing · git push
