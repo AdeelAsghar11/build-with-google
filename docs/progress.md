@@ -36,9 +36,9 @@
 
 | # | Task | Pri | Status |
 |---|---|---|---|
-| M1.1 | LLM client | P0 | ⬜ |
-| M1.2 | Prompts wired | P0 | ⬜ |
-| M1.3 | Rubric compiler (`compileRubric`) | P0 | ⬜ |
+| M1.1 | LLM client | P0 | ✅ |
+| M1.2 | Prompts wired | P0 | ✅ |
+| M1.3 | Rubric compiler (`compileRubric`) | P0 | ✅ |
 | M2.1 | Parse txt/docx/pdf | P0 | ⬜ |
 | M2.2 | Sanitize (hidden text) | P0 | ⬜ |
 | M2.3 | Redact PII + pseudonyms | P0 | ⬜ |
@@ -127,3 +127,4 @@ Format: `HH:MM · Adeel|Ubaid · did what · next`
 - 12:28 · Adeel · M0.7 fixtures complete (course, assessment with approved rubric, roster, 12 scripts with planted cases, tests passing) · git push
 - 12:33 · Adeel · M0.8 mock graded assessment complete (12 submissions, planted cases verified by vitest, contract-valid JSON, build & lint passing) · git push
 - 12:39 · Adeel · M0.3 Firestore repo & audit layer complete with typed methods & vitest coverage, build & lint passing · git push
+- 12:45 · Adeel · M1 complete (LLM client with nonce/schema/cache/audit, all 6 prompts wired & hashed, compileRubric pure + checks, 32 vitest passing, build & lint green) · git push
