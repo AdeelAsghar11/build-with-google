@@ -140,3 +140,4 @@ Format: `HH:MM · Adeel|Ubaid · did what · next`
 - 14:38 · Adeel & Ubaid · S2 Feature freeze reached: Complete Insaaf system delivered, 63 Vitest tests passing, 12/12 red-team attacks defended, README and API routes published · git push
 - 14:54 · Adeel & Ubaid · Rebranded complete system from Insaaf to Moderator across UI, README, documentation, and metadata · git push
 - 15:30 · Adeel & Ubaid · Fixed Webpack styling pipeline by adding @tailwindcss/postcss and postcss.config.mjs; verified utility classes & tokens render on localhost:3000 · git push
+- 15:48 · Adeel & Ubaid · Added Dual Mode Selector (Synthetic Cohort vs Real Live Assessment): custom rubric editor, Gemini rubric compiler, live submission ingest, real Gemini 2.5 AI grading with Guard + Dual Graders + Consensus + Verifier · git push

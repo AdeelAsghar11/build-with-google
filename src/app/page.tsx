@@ -40,9 +40,9 @@ export default function HomePage() {
               <span className="text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-[var(--muted)] text-[var(--muted-foreground)]">
                 Active Assessment
               </span>
-              <StatusBadge status="approved" />
+              <StatusBadge status={assessment.rubric?.status === "approved" ? "approved" : "draft_ready"} />
               <span className="text-xs text-[var(--muted-foreground)]">
-                Rubric v1 · Partial-credit Strictness: {assessment.strictness}/5
+                Rubric v{assessment.rubric?.version || 1} · Partial-credit Strictness: {assessment.strictness}/5
               </span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--foreground)]">
@@ -92,7 +92,7 @@ export default function HomePage() {
               Class Average
             </div>
             <div className="text-2xl sm:text-3xl font-bold text-[var(--foreground)] tabular-nums mt-1">
-              {analytics.kpis?.mean ?? 12.2} <span className="text-base font-normal text-[var(--muted-foreground)]">/ 20</span>
+              {analytics.kpis?.mean ?? 12.2} <span className="text-base font-normal text-[var(--muted-foreground)]">/ {assessment.totalMarks}</span>
             </div>
             <div className="text-xs text-[var(--muted-foreground)] mt-0.5">
               Median {analytics.kpis?.median ?? 13.0} · SD {analytics.kpis?.sd ?? 3.8}
@@ -107,7 +107,7 @@ export default function HomePage() {
               {analytics.kpis?.passRatePct ?? 83}%
             </div>
             <div className="text-xs text-[var(--muted-foreground)] mt-0.5">
-              Threshold 10.0 / 20.0
+              Threshold {(assessment.totalMarks / 2).toFixed(1)} / {assessment.totalMarks}.0
             </div>
           </div>
 

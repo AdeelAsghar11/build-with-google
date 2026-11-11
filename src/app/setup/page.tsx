@@ -5,7 +5,7 @@ import { useDemo } from "@/lib/store/demo-context";
 import { Button } from "@/components/ui/Button";
 import { StatusBadge, BandBadge } from "@/components/ui/Badge";
 import { STRICTNESS_TABLE } from "@/lib/pipeline/score";
-import type { Strictness, Band } from "@/lib/contracts";
+import type { Strictness, Band, Criterion } from "@/lib/contracts";
 import {
   CheckCircle2,
   Sliders,
@@ -14,22 +14,36 @@ import {
   FileCheck,
   BookOpen,
   Layers,
+  Sparkles,
+  Edit3,
 } from "lucide-react";
 
 export default function SetupPage() {
-  const { course, assessment, strictness, setStrictness } = useDemo();
+  const {
+    mode,
+    course,
+    assessment,
+    strictness,
+    setStrictness,
+    updateLiveAssessment,
+    approveLiveRubric,
+    compileLiveRubric,
+  } = useDemo();
+
   const [expandedCriteria, setExpandedCriteria] = useState<Record<string, boolean>>({
     C1: true,
     C2: false,
     C3: false,
     C4: false,
   });
-  const [isApproved, setIsApproved] = useState(assessment.rubric?.status === "approved");
+
+  const [isCompiling, setIsCompiling] = useState(false);
 
   const toggleExpand = (id: string) => {
     setExpandedCriteria((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
+  const isApproved = assessment.rubric?.status === "approved";
   const criteria = assessment.rubric?.criteria || [];
   const criteriaSum = criteria.reduce((acc, c) => acc + c.maxMarks, 0);
   const isValidTotal = criteriaSum === assessment.totalMarks;
@@ -42,8 +56,48 @@ export default function SetupPage() {
     5: "Strict (Zero credit for minimal)",
   };
 
+  const handleCompile = async () => {
+    setIsCompiling(true);
+    try {
+      await compileLiveRubric();
+    } finally {
+      setIsCompiling(false);
+    }
+  };
+
   return (
     <div className="space-y-8">
+      {/* Mode Banner */}
+      {mode === "live" ? (
+        <div className="p-4 rounded-lg bg-amber-50 border border-amber-200 text-amber-900 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-sm">
+          <div className="flex items-center gap-2.5">
+            <Sparkles className="w-5 h-5 text-amber-600 shrink-0" />
+            <div>
+              <div className="font-bold text-sm">Real Live Assessment Mode</div>
+              <div className="text-xs text-amber-800">
+                You can customize the question, reference answer, marks, and rubric below. Click &quot;Approve Rubric&quot; when ready to grade student scripts.
+              </div>
+            </div>
+          </div>
+          <Button
+            variant="secondary"
+            onClick={handleCompile}
+            disabled={isCompiling}
+            className="shrink-0 text-xs py-1.5"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+            {isCompiling ? "Compiling with Gemini..." : "Compile Rubric with Gemini"}
+          </Button>
+        </div>
+      ) : (
+        <div className="p-3.5 rounded-lg bg-[var(--card)] border border-[var(--rule)] text-xs text-[var(--muted-foreground)] flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2">
+            <span className="font-semibold text-[var(--foreground)]">Synthetic Benchmark Rubric:</span>
+            <span>Frozen CS401 rubric v1.0.0 with 4 audited criteria. Switch to &quot;Real Live Pipeline&quot; above to customize your own.</span>
+          </div>
+        </div>
+      )}
+
       {/* Page Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[var(--rule)]">
         <div>
@@ -75,37 +129,83 @@ export default function SetupPage() {
             <h2 className="text-lg font-bold tracking-tight text-[var(--foreground)] flex items-center gap-2">
               <BookOpen className="w-4 h-4 text-[var(--primary)]" />
               <span>Assessment Details</span>
+              {mode === "live" && (
+                <span className="text-[10px] font-mono uppercase bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">
+                  Editable
+                </span>
+              )}
             </h2>
 
-            <div className="space-y-3">
+            <div className="space-y-4">
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-[var(--muted-foreground)] mb-1">
                   Title & Denominator
                 </label>
-                <div className="flex items-center justify-between p-3 rounded bg-[var(--background)] border border-[var(--border)]">
-                  <span className="font-semibold text-sm">{assessment.title}</span>
-                  <span className="text-xs font-bold font-mono px-2 py-1 rounded bg-[var(--card)] border border-[var(--rule)]">
-                    {assessment.totalMarks} Marks Total
-                  </span>
-                </div>
+                {mode === "live" ? (
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <input
+                      type="text"
+                      value={assessment.title}
+                      onChange={(e) => updateLiveAssessment({ title: e.target.value })}
+                      placeholder="Assessment Title"
+                      className="flex-1 p-2.5 rounded bg-[var(--background)] border border-[var(--border)] text-sm font-semibold focus:outline-none focus:border-[var(--primary)]"
+                    />
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-bold text-[var(--muted-foreground)]">Marks:</span>
+                      <input
+                        type="number"
+                        value={assessment.totalMarks}
+                        onChange={(e) => updateLiveAssessment({ totalMarks: Number(e.target.value) || 20 })}
+                        className="w-20 p-2.5 rounded bg-[var(--background)] border border-[var(--border)] text-sm font-mono font-bold text-center"
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex items-center justify-between p-3 rounded bg-[var(--background)] border border-[var(--border)]">
+                    <span className="font-semibold text-sm">{assessment.title}</span>
+                    <span className="text-xs font-bold font-mono px-2 py-1 rounded bg-[var(--card)] border border-[var(--rule)]">
+                      {assessment.totalMarks} Marks Total
+                    </span>
+                  </div>
+                )}
               </div>
 
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-[var(--muted-foreground)] mb-1">
                   Question Prompt (Presented to Students)
                 </label>
-                <div className="p-3 rounded bg-[var(--background)] border border-[var(--border)] text-sm leading-relaxed">
-                  {assessment.question}
-                </div>
+                {mode === "live" ? (
+                  <textarea
+                    rows={3}
+                    value={assessment.question}
+                    onChange={(e) => updateLiveAssessment({ question: e.target.value })}
+                    placeholder="Enter the assessment question prompt..."
+                    className="w-full p-3 rounded bg-[var(--background)] border border-[var(--border)] text-sm leading-relaxed focus:outline-none focus:border-[var(--primary)] resize-y"
+                  />
+                ) : (
+                  <div className="p-3 rounded bg-[var(--background)] border border-[var(--border)] text-sm leading-relaxed">
+                    {assessment.question}
+                  </div>
+                )}
               </div>
 
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-[var(--muted-foreground)] mb-1">
                   Reference Solution (For Evidence Matching)
                 </label>
-                <div className="p-3 rounded bg-[var(--background)] border border-[var(--border)] text-xs text-[var(--muted-foreground)] leading-relaxed max-h-36 overflow-y-auto">
-                  {assessment.referenceAnswer}
-                </div>
+                {mode === "live" ? (
+                  <textarea
+                    rows={4}
+                    value={assessment.referenceAnswer || ""}
+                    onChange={(e) => updateLiveAssessment({ referenceAnswer: e.target.value })}
+                    placeholder="Enter ideal reference answer key..."
+                    className="w-full p-3 rounded bg-[var(--background)] border border-[var(--border)] text-xs text-[var(--foreground)] leading-relaxed focus:outline-none focus:border-[var(--primary)] resize-y"
+                  />
+                ) : (
+                  <div className="p-3 rounded bg-[var(--background)] border border-[var(--border)] text-xs text-[var(--muted-foreground)] leading-relaxed max-h-36 overflow-y-auto">
+                    {assessment.referenceAnswer}
+                  </div>
+                )}
               </div>
             </div>
           </section>
@@ -220,7 +320,11 @@ export default function SetupPage() {
 
               <Button
                 variant={isApproved ? "secondary" : "primary"}
-                onClick={() => setIsApproved(true)}
+                onClick={() => {
+                  if (mode === "live") {
+                    approveLiveRubric();
+                  }
+                }}
                 disabled={!isValidTotal}
               >
                 {isApproved ? "Rubric Approved (Frozen)" : "Approve Rubric (Freeze Version)"}
@@ -299,15 +403,18 @@ export default function SetupPage() {
               </h2>
             </div>
 
-            <div className="space-y-3">
+            <p className="text-xs text-[var(--muted-foreground)] leading-relaxed">
+              Every rubric criterion maps to an accredited CLO to guarantee constructive alignment:
+            </p>
+
+            <div className="space-y-3 pt-1">
               {course.clos.map((clo) => (
-                <div
-                  key={clo.id}
-                  className="p-3 rounded bg-[var(--background)] border border-[var(--rule)] space-y-1 text-xs"
-                >
-                  <div className="flex items-center justify-between font-bold">
-                    <span className="font-mono text-[var(--primary)]">{clo.id}</span>
-                    <span className="text-[var(--muted-foreground)] font-normal">Target: 65% attainment</span>
+                <div key={clo.id} className="p-3 rounded bg-[var(--background)] border border-[var(--border)] text-xs space-y-1">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold font-mono text-[var(--primary)]">{clo.id}</span>
+                    <span className="text-[10px] text-[var(--muted-foreground)] font-mono">
+                      Mapped to {clo.ploIds.join(", ")}
+                    </span>
                   </div>
                   <p className="text-[var(--foreground)] leading-relaxed">{clo.text}</p>
                 </div>

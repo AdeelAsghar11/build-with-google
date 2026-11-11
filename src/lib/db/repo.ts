@@ -14,6 +14,7 @@ import {
   CollusionPairSchema,
   AuditEntrySchema,
 } from "../contracts";
+import { initialCourse, initialAssessment, initialSubmissions } from "../demo-data";
 
 // Collection names
 const COLLECTIONS = {
@@ -28,9 +29,9 @@ const COLLECTIONS = {
 
 // In-memory store fallback for offline / demo mode
 const inMemoryStore = {
-  courses: new Map<string, Course>(),
-  assessments: new Map<string, Assessment>(),
-  submissions: new Map<string, Submission>(),
+  courses: new Map<string, Course>([[initialCourse.id, initialCourse]]),
+  assessments: new Map<string, Assessment>([[initialAssessment.id, initialAssessment]]),
+  submissions: new Map<string, Submission>(initialSubmissions.map((s) => [s.id, s])),
   identities: new Map<string, Identity>(),
   collusionPairs: new Map<string, CollusionPair[]>(),
   audit: [] as AuditEntry[],
