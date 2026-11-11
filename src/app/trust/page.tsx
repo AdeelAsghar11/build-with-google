@@ -59,7 +59,13 @@ export default function TrustReportPage() {
             </div>
             <div className="text-right sm:min-w-[120px]">
               <div className="text-base font-bold font-mono text-[var(--foreground)] tabular-nums">
-                {trustReport.panelAgreement ? Math.round(trustReport.panelAgreement.exactPct * 100) : 78}%
+                {trustReport.panelAgreement
+                  ? Math.round(
+                      trustReport.panelAgreement.exactPct > 1
+                        ? trustReport.panelAgreement.exactPct
+                        : trustReport.panelAgreement.exactPct * 100
+                    )
+                  : 78}%
               </div>
               <div className="text-[10px] text-[var(--muted-foreground)]">38 / 48 criteria</div>
             </div>
@@ -74,7 +80,13 @@ export default function TrustReportPage() {
             </div>
             <div className="text-right sm:min-w-[120px]">
               <div className="text-base font-bold font-mono text-[var(--evidence-verified)] tabular-nums">
-                {trustReport.panelAgreement ? Math.round(trustReport.panelAgreement.adjacentPct * 100) : 92}%
+                {trustReport.panelAgreement
+                  ? Math.round(
+                      trustReport.panelAgreement.adjacentPct > 1
+                        ? trustReport.panelAgreement.adjacentPct
+                        : trustReport.panelAgreement.adjacentPct * 100
+                    )
+                  : 92}%
               </div>
               <div className="text-[10px] text-[var(--muted-foreground)]">45 / 48 criteria</div>
             </div>

@@ -56,8 +56,8 @@
 | M5.2 | Finalize + route | P1 | ✅ |
 | M6.1 | Red-team cases | P1 | ✅ |
 | M6.2 | Red-team runner + results | P1 | ✅ |
-| M7.1 | Trust report + route | P1 | ⬜ |
-| M7.2 | Invariance tests | P2 | ⬜ |
+| M7.1 | Trust report + route | P1 | ✅ |
+| M7.2 | Invariance tests | P2 | ✅ |
 | M7.3 | Calibration | P2 | ⬜ |
 
 ## Ubaid: App, analytics, UI
@@ -134,3 +134,4 @@ Format: `HH:MM · Adeel|Ubaid · did what · next`
 - 13:49 · Adeel · M3 Grading core complete (Guard, Grader A/B parallel, Arbiter, Consensus, Router, Orchestrator, grade route, 48 vitest passing, grade:fixtures passing 12/12, S1 sync reached) · git push
 - 14:03 · Adeel · M4 & M5 complete: Feedback writer, within-class collusion detector (calibrated D-023), finalize batch pipeline & route, 50 vitest passing · git push
 - 14:14 · Adeel · M6 Security complete: 12 prompt injection attack vectors benchmarked in scripts/redteam.ts, 12/12 defended (100% defense rate), report generated in docs/redteam-results.md, tests & build green · git push
+- 14:24 · Adeel · M7 Trust & Invariance complete: trust.ts (QWK agreement, arbitration counts, injection & evidence stats, Pearson r length sensitivity, drift), GET /api/assessments/[id]/trust route, tests/trust.test.ts passing (57 total tests), Next.js build green · git push
