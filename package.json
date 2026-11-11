@@ -10,7 +10,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "redteam": "tsx scripts/redteam.ts",
-    "grade:fixtures": "tsx scripts/grade-fixtures.ts"
+    "grade:fixtures": "tsx --conditions=react-server scripts/grade-fixtures.ts"
   },
   "dependencies": {
     "@google/genai": "^3.1.0",

@@ -14,14 +14,12 @@ function normalize(str: string): string {
  */
 function tokenSimilarity(a: string[], b: string[]): number {
   if (a.length === 0 || b.length === 0) return 0;
-  const setA = new Set(a);
   const setB = new Set(b);
-  let intersection = 0;
-  for (const token of setA) {
-    if (setB.has(token)) intersection++;
+  let matches = 0;
+  for (const token of a) {
+    if (setB.has(token)) matches++;
   }
-  const union = new Set([...setA, ...setB]).size;
-  return union > 0 ? intersection / union : 0;
+  return matches / a.length;
 }
 
 /**
@@ -65,16 +63,17 @@ export function verifyQuote(
   // 2. Sliding window token similarity
   const submissionTokens = normSubmission.split(/\s+/).filter(Boolean);
   const quoteTokens = normQuote.split(/\s+/).filter(Boolean);
-  const windowSize = quoteTokens.length;
+  const quoteLen = quoteTokens.length;
 
-  if (windowSize <= submissionTokens.length) {
-    let bestSim = 0;
-    for (let i = 0; i <= submissionTokens.length - windowSize; i++) {
-      const window = submissionTokens.slice(i, i + windowSize);
-      const sim = tokenSimilarity(quoteTokens, window);
-      if (sim > bestSim) bestSim = sim;
-      if (bestSim >= 0.9) {
-        return "verified_fuzzy";
+  for (let delta = -2; delta <= 2; delta++) {
+    const windowSize = quoteLen + delta;
+    if (windowSize >= 3 && windowSize <= submissionTokens.length) {
+      for (let i = 0; i <= submissionTokens.length - windowSize; i++) {
+        const window = submissionTokens.slice(i, i + windowSize);
+        const sim = tokenSimilarity(quoteTokens, window);
+        if (sim >= 0.9) {
+          return "verified_fuzzy";
+        }
       }
     }
   }

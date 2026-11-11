@@ -13,7 +13,7 @@
 | Sync | Time | Status | Notes |
 |---|---|---|---|
 | S0 Contracts frozen, repo pushed | 12:15 | ✅ | Contracts frozen, fixtures & mock data ready, pushed to main |
-| S1 Upload → grade → review on 12 fixtures | 13:30 | ⬜ | |
+| S1 Upload → grade → review on 12 fixtures | 13:30 | ✅ | Upload -> grade -> review verified with scripts/grade-fixtures.ts |
 | S2 Feature freeze, merged to main | 14:00 | ⬜ | |
 
 ---
@@ -44,13 +44,13 @@
 | M2.3 | Redact PII + pseudonyms | P0 | ✅ |
 | M2.4 | Heuristic scan | P0 | ✅ |
 | M2.5 | `ingestFiles` export + tests | P0 | ✅ |
-| M3.1 | Guard (Gemma) + quarantine | P0 | 🟡 |
-| M3.2 | Grader A/B per criterion | P0 | 🟡 |
-| M3.3 | Evidence verifier | P0 | 🟡 |
-| M3.4 | Consensus + arbiter | P0 | 🟡 |
+| M3.1 | Guard (Gemma) + quarantine | P0 | ✅ |
+| M3.2 | Grader A/B per criterion | P0 | ✅ |
+| M3.3 | Evidence verifier | P0 | ✅ |
+| M3.4 | Consensus + arbiter | P0 | ✅ |
 | M3.5 | Scorer `score()` (pure, exported) | P0 | ✅ |
-| M3.6 | Router | P0 | 🟡 |
-| M3.7 | Orchestrator + grade route | P0 | 🟡 |
+| M3.6 | Router | P0 | ✅ |
+| M3.7 | Orchestrator + grade route | P0 | ✅ |
 | M4.1 | Feedback writer | P0 | ⬜ |
 | M5.1 | Collusion detector | P1 | ⬜ |
 | M5.2 | Finalize + route | P1 | ⬜ |
@@ -131,3 +131,4 @@ Format: `HH:MM · Adeel|Ubaid · did what · next`
 - 12:49 · Adeel · M2 complete (parse txt/docx/pdf, sanitize zero-width/hidden, redact PII + pseudonyms, heuristics, ingestFiles, 37 vitest passing, build & lint green) · git push
 - 13:18 · Adeel · D-022: Restored parallel team division with Ubaid (Adeel: AI pipeline, Ubaid: App/Analytics/UI); delivered complete Insaaf UI suite (Setup, Submissions, Review Queue, Analytics, Trust, Disclosure, Student Feedback Card) conforming to design.md, brand-sheet, and tokens.css · git push
 - 13:34 · Ubaid · UI suite build verified with Next.js 16 App Router, Suspense boundaries, strict TypeScript checks, all 8 test files passing · git push
+- 13:49 · Adeel · M3 Grading core complete (Guard, Grader A/B parallel, Arbiter, Consensus, Router, Orchestrator, grade route, 48 vitest passing, grade:fixtures passing 12/12, S1 sync reached) · git push
