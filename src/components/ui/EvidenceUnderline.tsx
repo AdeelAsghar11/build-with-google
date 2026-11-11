@@ -53,7 +53,7 @@ export function EvidenceUnderline({
   return (
     <span className="inline">
       <mark
-        className="insaaf-quote rounded-sm px-1 py-0.5 font-medium transition-colors"
+        className="moderator-quote rounded-sm px-1 py-0.5 font-medium transition-colors"
         data-kind={kind}
       >
         {quote}

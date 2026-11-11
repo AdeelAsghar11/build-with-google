@@ -1,4 +1,4 @@
-/* Insaaf light theme. Complete CSS colors, not HSL channel tuples.
+/* Moderator light theme. Complete CSS colors, not HSL channel tuples.
    Import after shadcn base tokens; remove stock dark-mode overrides.
    Tailwind v4 bridge lives in design.md. Do not wrap var() in hsl(). */
 :root {
@@ -84,38 +84,38 @@ a:hover { color: var(--accent-hover); }
 :where(button,a,input,select,textarea,[tabindex]):focus-visible {
   outline: 3px solid var(--ring); outline-offset: 3px;
 }
-.insaaf-button { min-height:44px; border:1px solid transparent; border-radius:var(--radius-input);
+.moderator-button, .insaaf-button { min-height:44px; border:1px solid transparent; border-radius:var(--radius-input);
   padding: 10px 16px; font:600 16px/1.375 var(--font-ui, var(--font-body)); cursor:pointer;
   transition:transform var(--motion-routine) var(--ease-out); }
-.insaaf-button[data-variant='primary'] { background:var(--primary);color:var(--primary-foreground); }
-.insaaf-button[data-variant='primary']:hover { background:var(--primary-hover); }
-.insaaf-button[data-variant='primary']:active { background:var(--primary-active); }
-.insaaf-button[data-variant='secondary'] { background:var(--card); color:var(--foreground);border-color:var(--border); }
-.insaaf-button[data-variant='ghost'] { background:transparent; color:var(--accent);text-decoration:underline;text-underline-offset:3px; }
-.insaaf-button[data-variant='secondary']:hover,.insaaf-button[data-variant='ghost']:hover { background:var(--muted); }
-.insaaf-button[data-variant='destructive'] { background:var(--error);color:var(--card); }
-.insaaf-button[data-variant='destructive']:hover { outline:1px solid var(--error);outline-offset:2px; }
-.insaaf-button:active { transform:translateY(1px); }
-.insaaf-button[data-variant]:disabled,.insaaf-button[data-variant][aria-disabled='true'] { background:var(--muted);color:var(--muted-foreground);
+.moderator-button[data-variant='primary'], .insaaf-button[data-variant='primary'] { background:var(--primary);color:var(--primary-foreground); }
+.moderator-button[data-variant='primary']:hover, .insaaf-button[data-variant='primary']:hover { background:var(--primary-hover); }
+.moderator-button[data-variant='primary']:active, .insaaf-button[data-variant='primary']:active { background:var(--primary-active); }
+.moderator-button[data-variant='secondary'], .insaaf-button[data-variant='secondary'] { background:var(--card); color:var(--foreground);border-color:var(--border); }
+.moderator-button[data-variant='ghost'], .insaaf-button[data-variant='ghost'] { background:transparent; color:var(--accent);text-decoration:underline;text-underline-offset:3px; }
+.moderator-button[data-variant='secondary']:hover, .moderator-button[data-variant='ghost']:hover, .insaaf-button[data-variant='secondary']:hover, .insaaf-button[data-variant='ghost']:hover { background:var(--muted); }
+.moderator-button[data-variant='destructive'], .insaaf-button[data-variant='destructive'] { background:var(--error);color:var(--card); }
+.moderator-button[data-variant='destructive']:hover, .insaaf-button[data-variant='destructive']:hover { outline:1px solid var(--error);outline-offset:2px; }
+.moderator-button:active, .insaaf-button:active { transform:translateY(1px); }
+.moderator-button[data-variant]:disabled, .moderator-button[data-variant][aria-disabled='true'], .insaaf-button[data-variant]:disabled, .insaaf-button[data-variant][aria-disabled='true'] { background:var(--muted);color:var(--muted-foreground);
   border-color:var(--border);cursor:not-allowed;transform:none;text-decoration:none;opacity:1; }
-.insaaf-button[aria-busy='true'] { cursor:progress;transform:none; }
-.insaaf-input { min-height:44px; border:1px solid var(--input); border-radius:var(--radius-input);
+.moderator-button[aria-busy='true'], .insaaf-button[aria-busy='true'] { cursor:progress;transform:none; }
+.moderator-input, .insaaf-input { min-height:44px; border:1px solid var(--input); border-radius:var(--radius-input);
  background:var(--card);color:var(--foreground);padding:10px 12px;font:inherit;width:100%; }
-.insaaf-input[aria-invalid='true'] { border:2px solid var(--error); }
-.insaaf-input::placeholder { color:var(--muted-foreground);opacity:1; }
-.insaaf-chip { display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:var(--radius-chip);
+.moderator-input[aria-invalid='true'], .insaaf-input[aria-invalid='true'] { border:2px solid var(--error); }
+.moderator-input::placeholder, .insaaf-input::placeholder { color:var(--muted-foreground);opacity:1; }
+.moderator-chip, .insaaf-chip { display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:var(--radius-chip);
  font-size:16px;font-weight:600;line-height:1.5;border:1px solid currentColor; }
-.insaaf-quote { color:var(--foreground);background:var(--evidence-verified-bg);
+.moderator-quote, .insaaf-quote { color:var(--foreground);background:var(--evidence-verified-bg);
  text-decoration:underline;text-decoration-color:var(--evidence-verified);text-decoration-thickness:2px;
  text-underline-offset:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:1px 2px; }
-.insaaf-quote[data-kind='fuzzy'] { background:var(--partial-bg);text-decoration-style:dotted;text-decoration-color:var(--partial); }
-.insaaf-quote[data-kind='error'] { background:var(--error-bg);text-decoration-style:wavy;text-decoration-color:var(--error); }
-.insaaf-quote[data-kind='hidden'],.insaaf-quote[data-kind='quarantined'] {
+.moderator-quote[data-kind='fuzzy'], .insaaf-quote[data-kind='fuzzy'] { background:var(--partial-bg);text-decoration-style:dotted;text-decoration-color:var(--partial); }
+.moderator-quote[data-kind='error'], .insaaf-quote[data-kind='error'] { background:var(--error-bg);text-decoration-style:wavy;text-decoration-color:var(--error); }
+.moderator-quote[data-kind='hidden'], .moderator-quote[data-kind='quarantined'], .insaaf-quote[data-kind='hidden'], .insaaf-quote[data-kind='quarantined'] {
  background:var(--flag-integrity-bg);text-decoration:line-through;text-decoration-color:var(--flag-integrity); }
-.insaaf-numeric { font-variant-numeric:tabular-nums lining-nums; }
-.insaaf-id { font-family:var(--font-data,var(--font-mono)); }
-.insaaf-feedback { max-width:65ch;overflow-wrap:anywhere; }
-.insaaf-skeleton { background:var(--muted);border-radius:var(--radius-input);animation:none; }
+.moderator-numeric, .insaaf-numeric { font-variant-numeric:tabular-nums lining-nums; }
+.moderator-id, .insaaf-id { font-family:var(--font-data,var(--font-mono)); }
+.moderator-feedback, .insaaf-feedback { max-width:65ch;overflow-wrap:anywhere; }
+.moderator-skeleton, .insaaf-skeleton { background:var(--muted);border-radius:var(--radius-input);animation:none; }
 :lang(ur) { font-family:var(--font-urdu-next,var(--font-urdu));font-size:20px;line-height:2.4;
  letter-spacing:normal;text-align:start; }
 [dir='rtl'] { text-align:start; }
@@ -123,12 +123,12 @@ a:hover { color: var(--accent-hover); }
  *,*::before,*::after { animation:none!important;transition:none!important;scroll-behavior:auto!important; }
 }
 
-.insaaf-input:hover { background:var(--muted); }
-.insaaf-input:disabled { background:var(--muted); color:var(--muted-foreground); opacity:1; cursor:not-allowed; }
-.insaaf-input:disabled::placeholder { color:var(--muted-foreground); }
-.insaaf-button[data-variant]:disabled:hover,.insaaf-button[data-variant][aria-disabled='true']:hover {
+.moderator-input:hover, .insaaf-input:hover { background:var(--muted); }
+.moderator-input:disabled, .insaaf-input:disabled { background:var(--muted); color:var(--muted-foreground); opacity:1; cursor:not-allowed; }
+.moderator-input:disabled::placeholder, .insaaf-input:disabled::placeholder { color:var(--muted-foreground); }
+.moderator-button[data-variant]:disabled:hover, .moderator-button[data-variant][aria-disabled='true']:hover, .insaaf-button[data-variant]:disabled:hover, .insaaf-button[data-variant][aria-disabled='true']:hover {
  background:var(--muted); color:var(--muted-foreground); transform:none; outline:none;
 }
-.insaaf-button[data-variant][aria-disabled='true']:focus-visible {
+.moderator-button[data-variant][aria-disabled='true']:focus-visible, .insaaf-button[data-variant][aria-disabled='true']:focus-visible {
  outline:3px solid var(--ring); outline-offset:3px;
 }

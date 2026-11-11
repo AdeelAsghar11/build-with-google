@@ -138,3 +138,4 @@ Format: `HH:MM · Adeel|Ubaid · did what · next`
 - 14:32 · Adeel · Assessment Lifecycle REST API suite complete: submissions GET/POST, review PATCH overrides/approvals, approve-clean, release tokens, strictness re-scoring, analytics GET, student /r/[token] feedback, 63 vitest passing, Next.js build green · git push
 - 14:36 · Adeel · M0.1/M0.5 Gemini API key configured in .env.local and ping-models verified live against Google GenAI SDK (gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-lite connected) · git push
 - 14:38 · Adeel & Ubaid · S2 Feature freeze reached: Complete Insaaf system delivered, 63 Vitest tests passing, 12/12 red-team attacks defended, README and API routes published · git push
+- 14:54 · Adeel & Ubaid · Rebranded complete system from Insaaf to Moderator across UI, README, documentation, and metadata · git push

@@ -12,7 +12,7 @@ import {
 
 async function main() {
   console.log("================================================================================");
-  console.log(" INSAAF (انصاف) — BATCH FIXTURE GRADING RUNNER");
+  console.log(" MODERATOR — BATCH FIXTURE GRADING RUNNER");
   console.log(" Running end-to-end grading on all 12 benchmark fixtures...");
   console.log("================================================================================\n");
 

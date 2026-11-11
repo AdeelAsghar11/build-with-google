@@ -36,7 +36,7 @@ export default function TrustReportPage() {
 
       {/* Intro Context Banner (design.md §5: Clear purpose, not a giant trust score) */}
       <div className="p-4 rounded bg-[var(--card)] border border-[var(--border)] shadow-[var(--shadow-paper)] text-xs sm:text-sm text-[var(--muted-foreground)] leading-relaxed">
-        <strong className="text-[var(--foreground)]">How these drafts were checked:</strong> Insaaf measures and reports agreement, verification rates, and injection resistance empirically. We never claim &ldquo;unbiased&rdquo; or &ldquo;100% accurate&rdquo; (D-002). Instead, every known bias vector has a named mitigation and a visible audit metric.
+        <strong className="text-[var(--foreground)]">How these drafts were checked:</strong> Moderator measures and reports agreement, verification rates, and injection resistance empirically. We never claim &ldquo;unbiased&rdquo; or &ldquo;100% accurate&rdquo; (D-002). Instead, every known bias vector has a named mitigation and a visible audit metric.
       </div>
 
       {/* Trust Ledger Table */}

@@ -15,10 +15,7 @@ export function AppHeader() {
         <div className="flex items-center gap-4">
           <Link href="/" className="flex items-baseline gap-2.5 no-underline group">
             <span className="font-[family-name:var(--font-heading)] text-2xl font-bold tracking-tight text-[var(--foreground)] group-hover:text-[var(--primary)] transition-colors">
-              Insaaf
-            </span>
-            <span className="text-xs uppercase tracking-widest font-semibold px-2 py-0.5 rounded bg-[var(--muted)] text-[var(--muted-foreground)]">
-              انصاف
+              Moderator
             </span>
           </Link>
           <div className="hidden md:block h-4 w-px bg-[var(--rule)]" />

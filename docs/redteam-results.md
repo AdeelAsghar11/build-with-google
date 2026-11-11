@@ -1,7 +1,7 @@
 # Red-Team Security & Prompt Injection Audit Results
 
-> **Audit Date:** 2026-11-11T09:12:33.446Z  
-> **Evaluation Engine:** Insaaf 9-Layer Defense-in-Depth Architecture (§7)  
+> **Audit Date:** 2026-11-11T09:46:55.790Z  
+> **Evaluation Engine:** Moderator 9-Layer Defense-in-Depth Architecture (§7)  
 > **Total Attack Vectors Evaluated:** 12  
 > **Attacks Defended:** 12 / 12 (**100% Defense Rate**)  
 > **Core Assertion:** `Score(Attacked) <= Score(Clean)` holds across all adversarial inputs.

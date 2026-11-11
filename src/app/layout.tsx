@@ -24,7 +24,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Insaaf — Teacher-Assisted, Bias-Audited AI Grading",
+  title: "Moderator — Teacher-Assisted, Bias-Audited AI Grading",
   description:
     "An AI grading copilot with two-panel grading, verbatim evidence verification, prompt injection defense, and strict teacher approval gates.",
 };

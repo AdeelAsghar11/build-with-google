@@ -43,7 +43,7 @@ function cleanJsonString(str: string): string {
 }
 
 /**
- * Universal model call wrapper adhering to Insaaf architecture:
+ * Universal model call wrapper adhering to Moderator architecture:
  * - Isolated prompt loading & version hashing
  * - Nonce-delimited untrusted student inputs
  * - Structured JSON schema enforcement with Zod

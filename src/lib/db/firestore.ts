@@ -25,7 +25,7 @@ export function getDb(): Firestore {
       });
     } else {
       // Demo / default credentials fallback
-      initializeApp({ projectId: projectId || "insaaf-demo" });
+      initializeApp({ projectId: projectId || "moderator-demo" });
     }
   }
 

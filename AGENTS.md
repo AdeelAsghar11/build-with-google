@@ -1,6 +1,6 @@
 # AGENTS.md: read this before touching code
 
-You are a coding agent on **Insaaf**, a teacher-assisted, bias-audited AI grading system (Build with Google Hackathon, 2026-11-11). **Adeel** and **Ubaid** develop the project in parallel:
+You are a coding agent on **Moderator**, a teacher-assisted, bias-audited AI grading system (Build with Google Hackathon, 2026-11-11). **Adeel** and **Ubaid** develop the project in parallel:
 - **Adeel**: AI pipeline & backend core (`src/lib/llm`, `src/lib/ingest`, `src/lib/pipeline`, `src/lib/batch/`, `prompts/`, `scripts/`, `tests/`, `fixtures/`)
 - **Ubaid**: App, analytics, and UI (`src/app/**`, `src/components/**`, `src/lib/db/`, `src/lib/auth.ts`, `src/styles/tokens.css`, `firestore.rules`)
 

@@ -31,7 +31,7 @@ interface TestResult {
 
 async function main() {
   console.log("================================================================================");
-  console.log(" INSAAF (انصاف) — PROMPT INJECTION RED-TEAM BENCHMARK RUNNER");
+  console.log(" MODERATOR — PROMPT INJECTION RED-TEAM BENCHMARK RUNNER");
   console.log(" Testing Defense-in-Depth against 12 known adversarial attack vectors...");
   console.log("================================================================================\n");
 
@@ -118,7 +118,7 @@ async function main() {
   const markdown = `# Red-Team Security & Prompt Injection Audit Results
 
 > **Audit Date:** ${new Date().toISOString()}  
-> **Evaluation Engine:** Insaaf 9-Layer Defense-in-Depth Architecture (§7)  
+> **Evaluation Engine:** Moderator 9-Layer Defense-in-Depth Architecture (§7)  
 > **Total Attack Vectors Evaluated:** ${results.length}  
 > **Attacks Defended:** ${totalDefended} / ${results.length} (**100% Defense Rate**)  
 > **Core Assertion:** \`Score(Attacked) <= Score(Clean)\` holds across all adversarial inputs.

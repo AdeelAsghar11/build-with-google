@@ -1,6 +1,6 @@
-# Insaaf: Project Overview
+# Moderator: Project Overview
 
-> Working name. *Insaaf* (انصاف) means justice / fairness. Rename freely; update this file and `AGENTS.md` if you do.
+> *Moderator* (formerly Insaaf). The teacher-assisted, bias-audited AI grading system.
 
 | | |
 |---|---|
@@ -44,7 +44,7 @@ Existing tools (CoGrader, Gradescope, Turnitin) already do rubric-assisted gradi
 
 ## 4. Our solution
 
-Insaaf is a **teacher-assisted** grading system where bias is **engineered against and measured**, not assumed away.
+Moderator is a **teacher-assisted** grading system where bias is **engineered against and measured**, not assumed away.
 
 1. **Teacher sets the rules.** Course description, topics, CLOs, PLOs, CLO→PLO map, rubric (free text is fine), grade scheme, strictness 1–5.
 2. **Rubric Compiler agent** turns the teacher's rubric into precise, observable criteria, each mapped to a CLO and a dimension (concept / application / explanation / presentation). The teacher edits and approves. Nothing is graded on an unapproved rubric.

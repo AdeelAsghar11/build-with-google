@@ -13,7 +13,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         data-variant={variant}
         aria-busy={isLoading}
         disabled={disabled || isLoading}
-        className={`insaaf-button inline-flex items-center justify-center gap-2 select-none ${className}`}
+        className={`moderator-button inline-flex items-center justify-center gap-2 select-none ${className}`}
         {...props}
       >
         {isLoading && (

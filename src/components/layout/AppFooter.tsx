@@ -32,7 +32,7 @@ export function AppFooter() {
       <footer className="w-full bg-[var(--card)] border-t border-[var(--rule)] py-8 mt-12 text-xs text-[var(--muted-foreground)]">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
-            <span className="font-semibold text-[var(--foreground)]">Insaaf (انصاف)</span>
+            <span className="font-semibold text-[var(--foreground)]">Moderator</span>
             <span className="hidden sm:inline">·</span>
             <span>Build with Google Hackathon 2026 · COMSATS</span>
             <span className="hidden sm:inline">·</span>

@@ -72,7 +72,7 @@ export function DemoProvider({ children }: { children: React.ReactNode }) {
     {
       id: "aud-002",
       timestamp: "2026-11-11T12:28:00Z",
-      actor: "Insaaf Pipeline",
+      actor: "Moderator Pipeline",
       action: "batch_ingest",
       summary: "Ingested 12 scripts. Redacted PII, pseudonymized S-01 to S-12.",
     },

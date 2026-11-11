@@ -36,7 +36,7 @@ function StudentFeedbackContent({
       <div className="bg-[var(--card)] p-6 sm:p-8 rounded border border-[var(--border)] shadow-[var(--shadow-paper)] space-y-4">
         <div className="flex items-center justify-between">
           <span className="font-[family-name:var(--font-heading)] font-bold text-xl text-[var(--foreground)]">
-            Insaaf (انصاف)
+            Moderator
           </span>
           <StatusBadge status="released" />
         </div>
@@ -186,7 +186,7 @@ function StudentFeedbackContent({
 
       {/* Footer Disclaimer Link */}
       <div className="text-center text-xs text-[var(--muted-foreground)] space-y-1">
-        <p>Insaaf AI Evaluation Engine · Version 1.0.0</p>
+        <p>Moderator AI Evaluation Engine · Version 1.0.0</p>
         <Link href="/disclosure" className="text-[var(--accent)] hover:underline inline-flex items-center gap-1">
           Read our Public AI Disclosure & Marking Transparency Policy <ArrowRight className="w-3 h-3" />
         </Link>

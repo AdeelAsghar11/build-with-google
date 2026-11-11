@@ -57,7 +57,7 @@ export default function DisclosurePage() {
           Public AI Assistance & Accountability Disclosure
         </h1>
         <p className="text-base text-[var(--muted-foreground)] leading-relaxed pt-1">
-          Insaaf helps teachers review written work against an approved rubric. AI proposes judgements and quoted evidence; code calculates marks. Your teacher can change the draft and must approve marks before they are released.
+          Moderator helps teachers review written work against an approved rubric. AI proposes judgements and quoted evidence; code calculates marks. Your teacher can change the draft and must approve marks before they are released.
         </p>
       </div>
 
@@ -142,8 +142,8 @@ export default function DisclosurePage() {
           <span>Known System Limits & Boundary Conditions</span>
         </div>
         <ul className="list-disc list-inside space-y-1 text-[var(--muted-foreground)]">
-          <li><strong>Typed Text Only:</strong> Insaaf processes text extracted from TXT, DOCX, and digital PDF files. Handwritten script OCR is intentionally excluded from MVP to prevent misreading penalties.</li>
-          <li><strong>Similarity Scope:</strong> Similarity checks (5-shingles and embedding cosine) operate strictly within the uploaded batch. Insaaf does not search external internet databases or assert plagiarism.</li>
+          <li><strong>Typed Text Only:</strong> Moderator processes text extracted from TXT, DOCX, and digital PDF files. Handwritten script OCR is intentionally excluded from MVP to prevent misreading penalties.</li>
+          <li><strong>Similarity Scope:</strong> Similarity checks (5-shingles and embedding cosine) operate strictly within the uploaded batch. Moderator does not search external internet databases or assert plagiarism.</li>
           <li><strong>Teacher Accountability:</strong> The AI proposes drafts to accelerate feedback turnaround; final grades and academic accountability rest entirely with the instructor.</li>
         </ul>
       </section>

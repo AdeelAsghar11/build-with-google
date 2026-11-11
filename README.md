@@ -1,4 +1,4 @@
-# Insaaf (انصاف) — Teacher-Assisted, Bias-Audited AI Grading System
+# Moderator — Teacher-Assisted, Bias-Audited AI Grading System
 
 > **Build with Google Hackathon 2026** · **Domain**: Education & Learning · **UN SDG 4**: Quality Education (Target 4.3 & 4.c)  
 > *"The AI drafts. The teacher decides. Every mark is evidenced, explained, and audited."*
@@ -20,13 +20,13 @@ University educators routinely mark hundreds of exam scripts and assignments eac
 
 ---
 
-## 2. The Insaaf Solution
+## 2. The Moderator Solution
 
-**Insaaf** solves this by establishing a mathematically rigorous, human-in-the-loop, adversarially hardened assessment pipeline.
+**Moderator** solves this by establishing a mathematically rigorous, human-in-the-loop, adversarially hardened assessment pipeline.
 
 ```
 +---------------------------------------------------------------------------------------------------+
-|                                  INSAAF ARCHITECTURE PIPELINE                                     |
+|                                 MODERATOR ARCHITECTURE PIPELINE                                   |
 +---------------------------------------------------------------------------------------------------+
                                                   |
            [Student Submissions: TXT, DOCX, PDF] + [Roster CSV]
@@ -112,7 +112,7 @@ University educators routinely mark hundreds of exam scripts and assignments eac
 
 ## 4. Benchmark Validation & Security Red-Team
 
-Insaaf includes a dedicated 12-vector adversarial red-team suite ([`scripts/redteam.ts`](file:///scripts/redteam.ts)):
+Moderator includes a dedicated 12-vector adversarial red-team suite ([`scripts/redteam.ts`](file:///scripts/redteam.ts)):
 
 | Vector ID | Category | Attack Vector Description | Defense Mechanism | Status |
 |---|---|---|---|---|
@@ -226,7 +226,7 @@ npm run build
 
 ## 9. Ethical Governance & Pakistan HEC GenAI Alignment
 
-Insaaf aligns directly with the Pakistan Higher Education Commission (HEC) GenAI Policy Framework for higher education:
+Moderator aligns directly with the Pakistan Higher Education Commission (HEC) GenAI Policy Framework for higher education:
 - **Human Autonomy**: AI serves as a drafting aid; teachers hold sole authority over marks.
 - **Transparency**: Every model, prompt version, and system parameter is disclosed on the Trust and Disclosure pages.
 - **Privacy & Tenancy**: Deployable in an institution's private Google Cloud project; student names never touch LLMs.
