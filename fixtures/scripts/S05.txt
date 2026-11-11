@@ -1,0 +1,10 @@
+Assignment 1 - Overfitting
+
+Overfitting is a condition where a machine learning model fits the training data too well, capturing noise and random errors along with genuine patterns. This leads to a model with low bias and high variance. The model excels on the training set but performs poorly on independent test sets because it lacks generalization ability.
+
+Detection:
+Overfitting can be detected by comparing training error against validation error. If the training error continues to decrease over epochs while the validation error begins to rise, this divergence confirms overfitting. Cross-validation can also be used to observe whether validation performance is significantly lower than training performance.
+
+Two ways to reduce overfitting:
+1. L1 and L2 Regularization: Adding a penalty on large weights in the loss function to constrain the model's complexity.
+2. Pruning (for decision trees): Removing branches that provide little predictive power and only split on noisy training records.

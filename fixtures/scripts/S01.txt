@@ -1,0 +1,13 @@
+Student Name: Ali Ahmed
+Roll Number: FA23-BCS-001
+Assignment 1: Overfitting & Regularization
+
+Overfitting occurs when a machine learning model fits too closely to the training dataset, learning random fluctuations and noise rather than the underlying data distribution. Consequently, the model achieves near-perfect performance on training data but suffers from high generalization error (high variance) on unseen test data.
+
+To detect overfitting, we evaluate the model on both a training set and an independent validation set. By plotting the learning curves (loss versus epochs), overfitting is identified when the training loss steadily declines while the validation loss begins to diverge and increase.
+
+Two effective ways to reduce overfitting are:
+1. L2 Regularization (Weight Decay): Adds a penalty term proportional to the square of model weights to the loss function. This discourages overly complex decision boundaries and prevents any single feature from dominating.
+2. Early Stopping: Monitors validation loss during training and halts optimization when the validation error stops improving for a specified patience threshold, preventing the network from memorizing training noise.
+
+Example: In polynomial regression predicting house prices, fitting a 1st or 2nd-degree curve captures the price trend well. However, using a 15th-degree polynomial creates a wildly oscillating curve that passes exactly through every training point but produces absurd price predictions for houses with intermediate square footage.

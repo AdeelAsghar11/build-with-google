@@ -1,0 +1,14 @@
+Student: Omar Farooq (FA23-BCS-009)
+Course: CS401 Machine Learning
+Assignment: Detection and Mitigation of Model Overfitting
+
+Overfitting is an essential challenge in supervised predictive modeling where an algorithm tailors its internal parameters too closely to the nuances and stochastic noise of the training corpus. When this occurs, the model exhibits minimal training error but demonstrates substantial generalization degradation on unseen validation datasets.
+
+Detection of overfitting is predominantly achieved through empirical monitoring of learning curves across iterative training epochs. By plotting training loss alongside validation loss, one observes a divergence point: the training loss consistently decreases toward zero, whereas the validation loss reaches a local minimum and begins an upward trajectory, highlighting the expansion of the generalization gap.
+
+Two primary techniques to mitigate overfitting include:
+1. L2 Regularization (Ridge Regression): This approach injects an explicit penalty proportional to the sum of squared model coefficients into the cost formulation, constraining weight magnitude and discouraging hyper-sensitive decision boundaries.
+2. Cross-Validation and Early Stopping: Implementing K-Fold cross-validation establishes robust out-of-sample performance estimates, while early stopping halts gradient updates when the validation objective fails to improve over consecutive epochs.
+
+Practical Example:
+In medical imaging for skin cancer diagnosis, if malignant biopsy photos systematically include surgical boundary markings while benign lesions do not, a deep convolutional model will overfit by learning to classify based on ink presence rather than cellular morphology. It scores near 100% in training but fails when exposed to unmarked clinical photographs.

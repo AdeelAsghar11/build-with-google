@@ -1,0 +1,19 @@
+Assignment 1: Supervised Learning & Generalization
+
+1. Concept of Overfitting:
+In supervised learning, the fundamental goal is generalization: estimating a hypothesis function f(x) from an empirical sample D = {(x_i, y_i)} that minimizes expected risk on the true underlying distribution P(X, Y). Overfitting describes the failure mode where model capacity exceeds the informational complexity of the training sample. The learning algorithm optimizes empirical risk by memorizing idiosyncrasies, measurement noise, and sampling artifacts present in D. In the classical bias-variance decomposition of mean squared error, overfitting corresponds to the regime of low bias but very high variance: minor perturbations in the training set cause drastic fluctuations in the learned parameters, leading to catastrophic test-set degradation.
+
+2. Detection of Overfitting:
+Overfitting cannot be detected by monitoring empirical training loss alone. Effective detection requires partitioning data into training, validation, and holdout test partitions, or employing K-fold cross-validation.
+Specifically, learning curves must be plotted showing loss (cross-entropy or MSE) against training epochs:
+- During early training, both training loss and validation loss decrease monotonically.
+- The inflection point occurs where the training loss continues its asymptotic descent toward zero, while the validation loss reaches a minimum and systematically begins to climb upward. The gap between the two curves represents the generalization gap, serving as an unambiguous empirical signature of overfitting.
+
+3. Two Methods to Reduce Overfitting:
+Method A - Structural Regularization (L1 Lasso and L2 Ridge):
+We augment the objective function with a weight penalty J_reg(theta) = J_emp(theta) + lambda * Omega(theta). Under L2 regularization (Ridge / Weight Decay), Omega(theta) = sum(theta_j^2). This restricts parameter search volume, penalizes extreme curvature, and bounds Lipschitz constants, forcing smoother decision surfaces.
+Method B - Dropout & Data Augmentation:
+In deep neural architectures, Dropout stochastically deactivates hidden neurons with probability p during each forward pass. This prevents co-adaptation of feature detectors, effectively ensembling an exponential number of thinned sub-networks. In computer vision or NLP, data augmentation (rotations, cropping, synonym replacement) artificially enlarges sample diversity, increasing the effective sample size and making memorization mathematically harder.
+
+4. Concrete Practical Example:
+Consider classifying chest X-ray images for pneumonia. Suppose the training images from Hospital A contain a distinct metal calibration token in the top corner, while healthy control images from Hospital B lack it. A deep convolutional neural network with high capacity will overfit by learning to identify pneumonia based purely on the metal token rather than pulmonary infiltrates. On training data, accuracy reaches 99.8%. However, when deployed in Hospital C where healthy patients also have calibration markers, test accuracy plunges to 51% (random chance), demonstrating dangerous real-world failure due to overfitting.

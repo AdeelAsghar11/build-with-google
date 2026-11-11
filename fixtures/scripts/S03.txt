@@ -1,0 +1,14 @@
+Assignment Submission - Machine Learning
+
+Overfitting kia hai:
+Machine learning mein overfitting tab hoti hai jab model training data ko zaroorat se zyada memorize kar leta hai. Model sirf general patterns nahi seekhta balkay training data ka random noise aur outliers bhi learn kar leta hai. Is ki wajah se training accuracy 99% ya 100% ho jati hai lekin jab naya unseen test data ata hai tou model fail ho jata hai aur test error bohat barh jata hai (high variance problem).
+
+Detect kaisay karein:
+Overfitting detect karne ka sab se behtareen tareeqa validation set aur learning curves hain. Agar training loss lagataar kam ho rahi ho lekin validation loss ek point ke baad barhna shuru ho jaye tou yeh clear sign hai ke model overfit ho raha hai. Is divergence ko generalization gap kehtay hain. K-fold cross validation se bhi hum variance check kar saktay hain.
+
+Do tareeqay overfitting kam karne ke:
+1. Regularization (L1 / L2 Penalty): Loss function ke andar weights ka penalty term add kar dete hain taake weights bohat baray na hon aur decision boundary smooth rahay. L2 regularization (Ridge) model ki complexity ko control karti hai.
+2. Dropout / Early Stopping: Deep neural networks mein training ke dauran neurons ko randomly deactivate (dropout) kar dete hain taake network kisi specific feature pe depend na kare. Ya early stopping use karte hain jahan validation loss barhte hi training rok di jati hai.
+
+Example:
+Misaal ke tor par agar hum students ke marks predict karne ke liye study hours ka dataset use karein aur ek 10th-degree polynomial regression model train kar dein. Model har single data point ke ooper se guzray ga aur training error 0 hoga. Lekin agar koi naya student 6.5 ghantay parhay tou model weird prediction dega (jaise negative marks ya unrealistic values). Yeh typical overfitting ki example hai.

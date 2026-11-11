@@ -28,7 +28,7 @@
 | M0.4 | `.env.example`, gitignore | Adeel | ✅ |
 | M0.5 | Model IDs verified + logged | Adeel | ⬜ |
 | M0.6 | Contracts (zod) frozen | Adeel | ✅ |
-| M0.7 | Fixtures (course, assessment, roster, 12 scripts) | Adeel | ⬜ |
+| M0.7 | Fixtures (course, assessment, roster, 12 scripts) | Adeel | ✅ |
 | M0.8 | Mock graded assessment JSON | Adeel | ⬜ |
 
 
@@ -124,3 +124,4 @@ Format: `HH:MM · Adeel|Ubaid · did what · next`
 - 12:05 · Adeel · Consolidated all development under Adeel (D-020), starting M0.2 skeleton setup · M0.2
 - 12:17 · Adeel · M0.2 & M0.4 complete (Next.js scaffold, all deps installed, .env.example, gitignore, firestore.rules, score() verified by vitest, build & lint passing) · git push
 - 12:22 · Adeel · M0.6 contracts frozen with AnalyticsReport & TrustReport schemas, tests passing · M0.7 fixtures
+- 12:28 · Adeel · M0.7 fixtures complete (course, assessment with approved rubric, roster, 12 scripts with planted cases, tests passing) · git push

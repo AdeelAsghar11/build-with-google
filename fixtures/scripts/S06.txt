@@ -1,0 +1,12 @@
+Overfitting Assignment Response
+
+Overfitting happens when a statistical model learns both the underlying relationship and the noise in the training dataset. It leads to poor generalization on testing data, meaning test accuracy is much lower than training accuracy.
+
+To detect it, you split your dataset into train and test sets (e.g. 80-20 split). You train on the 80% and evaluate on the 20%. If your accuracy on train is 95% but test is only 65%, that indicates the presence of overfitting.
+
+Two ways to reduce overfitting:
+1. Increase the number of layers and training epochs: Adding more hidden layers and training for 1000 more epochs allows the neural network more opportunities and depth to learn all features of the problem thoroughly.
+2. Feature selection: Removing redundant or irrelevant input features so the model does not get distracted by unimportant columns.
+
+Example:
+An example is predicting loan defaults. If a bank uses an overfitted decision tree, it might memorize specific applicant names and addresses from the past instead of financial credit ratios, causing it to misclassify new applicants.

@@ -1,0 +1,14 @@
+Assignment 1: Overfitting through an Information-Theoretic Lens
+
+1. Overfitting Mechanism:
+From the perspective of Minimum Description Length (MDL) and Information Bottleneck theory, learning is lossy data compression. An optimal model f compresses the input representation X into a minimal sufficient statistic for target Y. Overfitting occurs when the mutual information I(Z; X) between the internal representation Z and input noise is unnecessarily large. In algorithmic terms, the two-part code length L(Hypothesis) + L(Data | Hypothesis) is non-minimal because the hypothesis encodes high-frequency Shannon entropy of the training sample rather than the true causal generative distribution, causing excess Kolmogorov complexity.
+
+2. Detection:
+Detection is grounded in measuring the empirical Rademacher complexity and PAC-Bayes generalization bounds. Practically, this is tracked by computing out-of-fold cross-entropy and observing the point where mutual information with test outcomes diminishes while empirical empirical gradient norm vanishes. When the entropy of predictions on held-out perturbations drops sharply below source entropy, variance explosion has taken place.
+
+3. Two Reduction Strategies:
+- Information Bottleneck Regularization: Imposing a Lagrange multiplier beta on mutual information min I(X; T) - beta * I(T; Y) (as operationalized in Variational Dropout or Weight Noise Injection), restricting channel capacity.
+- Structural Risk Minimization (Vapnik-Chervonenkis dimension pruning): Selecting hypotheses from a nested sequence of model families with progressively bounded VC-dimension, ensuring the generalization bound epsilon(N, h) remains strictly sub-unity.
+
+4. Concrete Scenario:
+Consider a high-dimensional financial limit order book forecaster. If the model captures transient microsecond microstructure latency artifacts (such as specific router queuing delays from a single broker), its internal state memorizes deterministic noise. In historical backtesting, Sharpe ratio is 14.2, but in live deployment on an alternative exchange gateway, the strategy undergoes immediate maximum drawdown because the router delays are absent.

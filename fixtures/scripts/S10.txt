@@ -1,0 +1,14 @@
+Assignment 1: Overfitting and Regularization Techniques
+
+Practical Example:
+In medical imaging analysis for skin cancer detection, when malignant biopsy samples regularly contain surgical ruler markings and benign scans lack them, a deep convolutional model will overfit by identifying ink markers instead of lesion characteristics. The system scores nearly 100% in training accuracy but fails completely when presented with unmarked clinical photographs.
+
+Definition and Concept:
+Overfitting represents a critical problem in supervised predictive learning in which an algorithm fits its internal parameters excessively to the noise and specific nuances of training data. When this takes place, the model displays minimal training error while exhibiting substantial generalization degradation when evaluated against unseen validation datasets.
+
+How to Detect:
+Detection is primarily done through empirical monitoring of learning curves over successive training iterations. By tracking training loss alongside validation loss, a divergence point is observed: the training loss consistently drops toward zero, while validation loss hits a minimum and starts climbing, illustrating the growing generalization gap.
+
+Mitigation Methods:
+1. L2 Regularization (Ridge Regression): This technique adds a penalty proportional to the sum of squared model coefficients into the cost formulation, bounding weight magnitude and discouraging hyper-sensitive decision surfaces.
+2. Cross-Validation and Early Stopping: Using K-Fold cross-validation provides reliable out-of-sample estimates, whereas early stopping terminates gradient descent when validation performance fails to improve over successive evaluation checks.

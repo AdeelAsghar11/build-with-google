@@ -1,0 +1,54 @@
+{
+  "id": "course_ml_101",
+  "ownerUid": "teacher_demo_1",
+  "code": "CS401",
+  "title": "Introduction to Machine Learning",
+  "description": "Comprehensive foundation in supervised learning, model complexity, regularization, and generalization evaluation.",
+  "topics": [
+    "Supervised Learning",
+    "Overfitting and Underfitting",
+    "Generalization and Test Loss",
+    "Validation Techniques and K-Fold",
+    "Regularization (L1, L2, Dropout)"
+  ],
+  "plos": [
+    {
+      "id": "PLO-1",
+      "text": "Computing & Engineering Knowledge: Apply knowledge of mathematics and computing fundamentals."
+    },
+    {
+      "id": "PLO-2",
+      "text": "Problem Analysis: Identify, formulate, and analyze complex engineering and computing problems."
+    }
+  ],
+  "clos": [
+    {
+      "id": "CLO-1",
+      "text": "Explain fundamental concepts of model complexity, bias-variance tradeoff, and generalization.",
+      "bloom": "C2",
+      "ploIds": ["PLO-1"]
+    },
+    {
+      "id": "CLO-2",
+      "text": "Analyze and diagnose overfitting and underfitting using training and validation metrics.",
+      "bloom": "C4",
+      "ploIds": ["PLO-2"]
+    },
+    {
+      "id": "CLO-3",
+      "text": "Apply regularization and validation strategies to mitigate overfitting in predictive models.",
+      "bloom": "C3",
+      "ploIds": ["PLO-2"]
+    }
+  ],
+  "gradeScheme": [
+    { "letter": "A", "minPct": 85 },
+    { "letter": "B", "minPct": 70 },
+    { "letter": "C", "minPct": 55 },
+    { "letter": "D", "minPct": 50 },
+    { "letter": "F", "minPct": 0 }
+  ],
+  "cloStudentThresholdPct": 50,
+  "cloClassTargetPct": 60,
+  "createdAt": "2026-11-11T12:00:00.000Z"
+}

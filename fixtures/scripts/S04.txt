@@ -1,0 +1,17 @@
+Name: Zainab Tariq
+Roll No: FA23-BCS-004
+Email: zainab.tariq@student.edu
+
+Overfitting Answer:
+
+Overfitting means the model is too complicated for the given data. It memorizes the training data points instead of learning a general rule. Because of this, when you give it new data that it hasn't seen before, it performs poorly and makes mistakes. The training error is low but the test error is high.
+
+How to detect it:
+You can detect overfitting by testing the model on a separate test set. If the training score is 98% and the test score is 60%, then the model is overfitted.
+
+Two ways to reduce it:
+1. Cross Validation: Divide the data into folds to test the model better.
+2. Get more data: If we give more training examples, the model will learn better and cannot memorize all of them easily.
+
+Example:
+For instance, in self-driving cars, if the car only trains on sunny weather roads in California, it might memorize sunny road conditions and overfit, failing completely when driven in snowy or rainy weather.
