@@ -270,3 +270,144 @@ export const AuditEntrySchema = z.object({
   detail: z.string().optional(),
 });
 export type AuditEntry = z.infer<typeof AuditEntrySchema>;
+
+export const AnalyticsReportSchema = z.object({
+  assessmentId: z.string(),
+  generatedAt: z.string(),
+  kpis: z.object({
+    n: z.number(),
+    mean: z.number(),
+    median: z.number(),
+    sd: z.number(),
+    min: z.number(),
+    max: z.number(),
+    passRatePct: z.number(),
+  }),
+  histogram: z.object({
+    mean: z.number(),
+    median: z.number(),
+    bins: z.array(
+      z.object({
+        binStart: z.number(),
+        binEnd: z.number(),
+        count: z.number(),
+      })
+    ),
+  }),
+  gradeDistribution: z.record(z.string(), z.number()),
+  outliers: z.array(
+    z.object({
+      submissionId: z.string(),
+      pseudonym: z.string(),
+      pct: z.number(),
+      reason: z.string(),
+    })
+  ),
+  topStudents: z.array(
+    z.object({
+      submissionId: z.string(),
+      pseudonym: z.string(),
+      pct: z.number(),
+      grade: z.string(),
+    })
+  ),
+  needsAttention: z.array(
+    z.object({
+      submissionId: z.string(),
+      pseudonym: z.string(),
+      pct: z.number(),
+      reasons: z.array(z.string()),
+    })
+  ),
+  criterionDifficulty: z.array(
+    z.object({
+      criterionId: z.string(),
+      title: z.string(),
+      meanFraction: z.number(),
+    })
+  ),
+  dimensionProfile: z.record(DimensionSchema, z.number()),
+  clos: z.array(
+    z.object({
+      cloId: z.string(),
+      text: z.string(),
+      classAttainmentPct: z.number(),
+      targetPct: z.number(),
+      isAttained: z.boolean(),
+    })
+  ),
+  plos: z
+    .array(
+      z.object({
+        ploId: z.string(),
+        text: z.string(),
+        attainmentPct: z.number(),
+      })
+    )
+    .optional(),
+});
+export type AnalyticsReport = z.infer<typeof AnalyticsReportSchema>;
+
+export const TrustReportSchema = z.object({
+  assessmentId: z.string(),
+  generatedAt: z.string(),
+  panelAgreement: z.object({
+    exactPct: z.number(),
+    adjacentPct: z.number(),
+    qwk: z.number(),
+    totalVotes: z.number(),
+  }),
+  arbitrations: z.object({
+    count: z.number(),
+    reviewCount: z.number(),
+  }),
+  injectionDefence: z.object({
+    hiddenTextFinds: z.number(),
+    heuristicHits: z.number(),
+    guardFlags: z.number(),
+    quarantines: z.number(),
+    canaryFlags: z.number(),
+  }),
+  evidenceIntegrity: z.object({
+    verifiedQuotes: z.number(),
+    fuzzyQuotes: z.number(),
+    rejectedQuotes: z.number(),
+    discardedVotes: z.number(),
+  }),
+  teacherAgreement: z
+    .object({
+      anchorCount: z.number(),
+      mae: z.number(),
+      exactBandPct: z.number(),
+    })
+    .optional(),
+  teacherOverrides: z.object({
+    count: z.number(),
+    meanDelta: z.number(),
+    positiveDeltaCount: z.number(),
+    negativeDeltaCount: z.number(),
+  }),
+  lengthSensitivity: z.object({
+    pearsonR: z.number(),
+    sampleSize: z.number(),
+    note: z.string(),
+  }),
+  teacherDrift: z
+    .object({
+      olsSlope: z.number().optional(),
+      firstThirdMeanDelta: z.number().optional(),
+      lastThirdMeanDelta: z.number().optional(),
+      warning: z.boolean().optional(),
+      isSimulated: z.boolean().default(false),
+    })
+    .optional(),
+  models: z.record(
+    z.string(),
+    z.object({
+      model: z.string(),
+      promptVersion: z.string(),
+    })
+  ),
+});
+export type TrustReport = z.infer<typeof TrustReportSchema>;
+
