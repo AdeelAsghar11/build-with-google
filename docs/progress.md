@@ -22,11 +22,11 @@
 
 | # | Task | Owner | Status |
 |---|---|---|---|
-| M0.1 | GCP credits claimed, billing + Gemini key | Adeel | ⬜ |
+| M0.1 | GCP credits claimed, billing + Gemini key | Adeel | ✅ |
 | M0.2 | Next.js scaffold + deps + GitHub + skeleton | Adeel | ✅ |
 | M0.3 | Firebase Auth + Firestore + deny-all rules | Adeel | ✅ |
 | M0.4 | `.env.example`, gitignore | Adeel | ✅ |
-| M0.5 | Model IDs verified + logged | Adeel | ⬜ |
+| M0.5 | Model IDs verified + logged | Adeel | ✅ |
 | M0.6 | Contracts (zod) frozen | Adeel | ✅ |
 | M0.7 | Fixtures (course, assessment, roster, 12 scripts) | Adeel | ✅ |
 | M0.8 | Mock graded assessment JSON | Adeel | ✅ |
@@ -136,3 +136,4 @@ Format: `HH:MM · Adeel|Ubaid · did what · next`
 - 14:14 · Adeel · M6 Security complete: 12 prompt injection attack vectors benchmarked in scripts/redteam.ts, 12/12 defended (100% defense rate), report generated in docs/redteam-results.md, tests & build green · git push
 - 14:24 · Adeel · M7 Trust & Invariance complete: trust.ts (QWK agreement, arbitration counts, injection & evidence stats, Pearson r length sensitivity, drift), GET /api/assessments/[id]/trust route, tests/trust.test.ts passing (57 total tests), Next.js build green · git push
 - 14:32 · Adeel · Assessment Lifecycle REST API suite complete: submissions GET/POST, review PATCH overrides/approvals, approve-clean, release tokens, strictness re-scoring, analytics GET, student /r/[token] feedback, 63 vitest passing, Next.js build green · git push
+- 14:36 · Adeel · M0.1/M0.5 Gemini API key configured in .env.local and ping-models verified live against Google GenAI SDK (gemini-2.5-flash, gemini-2.5-pro, gemini-2.5-flash-lite connected) · git push
