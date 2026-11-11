@@ -183,15 +183,26 @@ export const ReviewReasonSchema = z.object({
 });
 export type ReviewReason = z.infer<typeof ReviewReasonSchema>;
 
+export const DimensionNotesSchema = z
+  .object({
+    concept: z.string().optional(),
+    application: z.string().optional(),
+    explanation: z.string().optional(),
+    presentation: z.string().optional(),
+  })
+  .optional();
+export type DimensionNotes = z.infer<typeof DimensionNotesSchema>;
+
 export const FeedbackSchema = z.object({
   language: z.enum(["en", "ur"]),
   strengths: z.array(z.object({ criterionId: z.string(), text: z.string(), quote: z.string().optional() })),
   improvements: z.array(z.object({ criterionId: z.string(), text: z.string(), quote: z.string().optional() })),
-  dimensionNotes: z.record(DimensionSchema, z.string().optional()).optional(),
+  dimensionNotes: DimensionNotesSchema,
   nextSteps: z.array(z.string()),
   model: z.string(),
   promptVersion: z.string(),
 });
+
 export type Feedback = z.infer<typeof FeedbackSchema>;
 
 export const SubmissionStatusSchema = z.enum([

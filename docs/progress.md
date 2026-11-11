@@ -29,7 +29,7 @@
 | M0.5 | Model IDs verified + logged | Adeel | ⬜ |
 | M0.6 | Contracts (zod) frozen | Adeel | ✅ |
 | M0.7 | Fixtures (course, assessment, roster, 12 scripts) | Adeel | ✅ |
-| M0.8 | Mock graded assessment JSON | Adeel | ⬜ |
+| M0.8 | Mock graded assessment JSON | Adeel | ✅ |
 
 
 ## Adeel: AI pipeline
@@ -125,3 +125,4 @@ Format: `HH:MM · Adeel|Ubaid · did what · next`
 - 12:17 · Adeel · M0.2 & M0.4 complete (Next.js scaffold, all deps installed, .env.example, gitignore, firestore.rules, score() verified by vitest, build & lint passing) · git push
 - 12:22 · Adeel · M0.6 contracts frozen with AnalyticsReport & TrustReport schemas, tests passing · M0.7 fixtures
 - 12:28 · Adeel · M0.7 fixtures complete (course, assessment with approved rubric, roster, 12 scripts with planted cases, tests passing) · git push
+- 12:33 · Adeel · M0.8 mock graded assessment complete (12 submissions, planted cases verified by vitest, contract-valid JSON, build & lint passing) · git push
