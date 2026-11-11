@@ -12,7 +12,7 @@
 
 | Sync | Time | Status | Notes |
 |---|---|---|---|
-| S0 Contracts frozen, repo pushed | 12:15 | 🟡 | Repo skeleton in progress |
+| S0 Contracts frozen, repo pushed | 12:15 | ✅ | Contracts frozen, fixtures & mock data ready, pushed to main |
 | S1 Upload → grade → review on 12 fixtures | 13:30 | ⬜ | |
 | S2 Feature freeze, merged to main | 14:00 | ⬜ | |
 
